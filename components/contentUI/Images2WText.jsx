@@ -14,7 +14,7 @@ const Images2WText = ({ mode, imageUrl1, alt1, imageUrl2, alt2, ...rest }) => {
           <div className="lg:w-1/12"></div>
           <div className="lg:w-11/12 lg:mb-16">
             <Banner
-              minHeight="500px"
+              minHeight="600px"
               imageUrl={imageUrl1}
               alt={alt1}
               overlayOpacity="50"
@@ -23,7 +23,7 @@ const Images2WText = ({ mode, imageUrl1, alt1, imageUrl2, alt2, ...rest }) => {
           <div className="mb-4 relative lg:hidden mx-auto -mt-[100px] w-10/12 z-10">
             <div className="overflow-hidden relative">
               <Banner
-                minHeight="500px"
+                minHeight="600px"
                 imageUrl={imageUrl2}
                 alt={alt2}
                 overlayOpacity="50"
@@ -41,7 +41,7 @@ const Images2WText = ({ mode, imageUrl1, alt1, imageUrl2, alt2, ...rest }) => {
           >
             <div className="overflow-hidden relative">
               <Banner
-                minHeight="500px"
+                minHeight="600px"
                 imageUrl={imageUrl2}
                 alt={alt2}
                 overlayOpacity="50"

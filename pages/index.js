@@ -127,14 +127,72 @@ export default function IndexPage() {
         imageUrl="/sunset.jpg"
         minHeight="400px"
         alt="sunset"
-        overlayOpacity="75"
+        overlayOpacity="50"
       >
         <Stats mode="dark" />
       </Banner>
-      <Pricing mode="light">
-        <PricingCard />
-        <PricingCard />
-        <PricingCard />
+      <Pricing
+        mode="light"
+        title="Simple no-tricks pricing"
+        description="Distinctio et nulla eum soluta et neque labore quibusdam. Saepe et quasi iusto modi velit ut non voluptas in. Explicabo id ut laborum."
+      >
+        <PricingCard
+          pricingData={{
+            title: "Lifetime membership",
+            description:
+              "Lorem ipsum dolor sit amet consect etur adipisicing elit. Itaque ametindis perferendis blanditiis repellendus etur quidem assumenda.",
+            includedFeatures: [
+              "Private forum access",
+              "Member resources",
+              "Entry to annual conference",
+              "Official member t-shirt",
+            ],
+            priceTitle: "Lifetime membership",
+            price: "$349",
+            priceDetails:
+              "Invoices and receipts available for easy company reimbursement",
+            buttonText: "Get access",
+            buttonUrl: "#",
+          }}
+        />
+        <PricingCard
+          pricingData={{
+            title: "Lifetime membership",
+            description:
+              "Lorem ipsum dolor sit amet consect etur adipisicing elit. Itaque ametindis perferendis blanditiis repellendus etur quidem assumenda.",
+            includedFeatures: [
+              "Private forum access",
+              "Member resources",
+              "Entry to annual conference",
+              "Official member t-shirt",
+            ],
+            priceTitle: "Lifetime membership",
+            price: "$349",
+            priceDetails:
+              "Invoices and receipts available for easy company reimbursement",
+            buttonText: "Get access",
+            buttonUrl: "#",
+          }}
+        />
+        <PricingCard
+          pricingData={{
+            title: "Lifetime membership",
+            description:
+              "Lorem ipsum dolor sit amet consect etur adipisicing elit. Itaque ametindis perferendis blanditiis repellendus etur quidem assumenda.",
+            includedFeatures: [
+              "Private forum access",
+              "Member resources",
+              "Entry to annual conference",
+              "Official member t-shirt",
+            ],
+            priceTitle: "Lifetime membership",
+            price: "$349",
+            priceDetails:
+              "Invoices and receipts available for easy company reimbursement",
+            buttonText: "Get access",
+            buttonUrl: "#",
+          }}
+        />
       </Pricing>
       <Banner
         imageUrl="/sunset.jpg"

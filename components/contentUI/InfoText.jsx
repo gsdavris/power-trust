@@ -11,7 +11,7 @@ const InfoText = ({
   return (
     <div className="mx-auto max-w-2xl py-16 px-4">
       <div
-        className={`hidden sm:mb-8 sm:flex sm:justify-${
+        className={`hidden sm:mb-8 sm:flex sm:justify-center ${
           textAlign === "left"
             ? "start"
             : textAlign === "right"

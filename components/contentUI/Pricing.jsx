@@ -1,4 +1,4 @@
-export default function Pricing({ children, mode }) {
+export default function Pricing({ title, description, children, mode }) {
   return (
     <div
       className={`${
@@ -12,18 +12,17 @@ export default function Pricing({ children, mode }) {
               mode === "light" ? "text-gray-900" : "text-gray-100"
             } sm:text-4xl`}
           >
-            Simple no-tricks pricing
+            {title}
           </h2>
           <p
             className={`mt-6 text-lg leading-8  ${
               mode === "light" ? "text-gray-600" : "text-gray-300"
             }`}
           >
-            Distinctio et nulla eum soluta et neque labore quibusdam. Saepe et
-            quasi iusto modi velit ut non voluptas in. Explicabo id ut laborum.
+            {description}
           </p>
         </div>
-        <div className="mx-auto w-full flex flex-wrap gap-x-4 justify-center">
+        <div className="mx-auto w-full flex flex-wrap gap-x-4 gap-y-4 pt-8 lg:pt-16 justify-center">
           {children}
         </div>
       </div>
