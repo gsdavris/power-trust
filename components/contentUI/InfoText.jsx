@@ -1,4 +1,7 @@
+import ContactButton from "./ContactButton";
+
 const InfoText = ({
+  contactModalButton = false,
   mode = "light",
   textAlign = "center",
   title = "",
@@ -63,6 +66,7 @@ const InfoText = ({
               : textAlign
           } gap-x-6`}
         >
+          {contactModalButton && <ContactButton />}
           {cta2.label2 && (
             <a
               href={cta2.path2}

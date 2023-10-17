@@ -1,5 +1,8 @@
+import ContactButton from "../contentUI/ContactButton";
+import Modal from "../contentUI/Modal";
 import FooterMenu from "../menus/FooterMenu";
 import SocialMenu from "../menus/SocialMenu";
+import ContactSection from "../sections/ContactSection";
 import AbsoluteFooter from "./AbsoluteFooter";
 import BackTop from "./BackTop";
 
@@ -74,9 +77,9 @@ const Footer = ({ mode = "light" }) => {
                     navigation={[
                       { label: "Terms & Conditions", location: "" },
                       { label: "Privacy Policy", location: "" },
-                      { label: " Contact Us", location: "" },
                     ]}
                   />
+                  <ContactButton />
                 </div>
               </div>
             </div>
@@ -84,6 +87,9 @@ const Footer = ({ mode = "light" }) => {
           <AbsoluteFooter mode={mode} />
         </div>
         <BackTop />
+        <Modal>
+          <ContactSection />
+        </Modal>
       </footer>
     </>
   );
