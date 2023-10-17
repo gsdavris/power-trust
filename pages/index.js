@@ -9,6 +9,9 @@ import Images2WText from "../components/contentUI/Images2WText";
 import Stats from "../components/contentUI/Stats";
 import Pricing from "../components/contentUI/Pricing";
 import PricingCard from "../components/contentUI/PricingCard";
+import ContactSection from "../components/sections/ContactSection";
+import Modal from "../components/contentUI/Modal";
+import SliderList from "../components/contentUI/SliderList";
 
 export default function IndexPage() {
   return (
@@ -57,6 +60,7 @@ export default function IndexPage() {
         >
           <InfoText
             mode="dark"
+            contactModalButton="true"
             title="Data to enrich your online business"
             subtitle="Announcing our next round of funding."
             description="Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua."
@@ -291,6 +295,8 @@ export default function IndexPage() {
         cta2={{ label2: "Get started", path2: "/#" }}
         cta3={{ label3: "Learn more", path3: "/#" }}
       />
+      <ContactSection />
+      <SliderList />
     </Layout>
   );
 }

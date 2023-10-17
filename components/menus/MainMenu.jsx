@@ -169,7 +169,7 @@ const MainMenu = ({ mode }) => {
                                     key={item.name}
                                     className="group relative text-base sm:text-sm"
                                   >
-                                    <div className="aspect-square overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
+                                    <div className="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
                                       <img
                                         src={item.imageSrc}
                                         alt={item.imageAlt}

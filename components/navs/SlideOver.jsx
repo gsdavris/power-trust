@@ -2,9 +2,9 @@ import { Fragment } from "react";
 import Link from "next/link";
 import { Dialog, Transition } from "@headlessui/react";
 import { HiOutlineXMark } from "react-icons/hi2";
-import ProfileDropdown from "../dropdowns/ProfileDropdown";
 import MobileMenu from "../menus/MobileMenu";
 import ProfileDropdownMobile from "../dropdowns/ProfileDropdownMobile";
+import ContactButton from "../contentUI/ContactButton";
 
 const SlideOver = ({ open, setOpen }) => {
   return (
@@ -64,7 +64,7 @@ const SlideOver = ({ open, setOpen }) => {
                             <MobileMenu />
                           </div>
                           <div className="py-6">
-                            <ProfileDropdownMobile />
+                            <ContactButton />
                           </div>
                         </div>
                       </div>

@@ -148,7 +148,7 @@ const MobileMenu = () => {
               <div className="grid grid-cols-2 gap-x-4">
                 {category.featured.map((item) => (
                   <div key={item.name} className="group relative text-sm">
-                    <div className="aspect-square overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
+                    <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
                       <img
                         src={item.imageSrc}
                         alt={item.imageAlt}
