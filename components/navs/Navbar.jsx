@@ -8,7 +8,13 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Navbar({ setOpen, mode }) {
+export default function Navbar({
+  setOpen,
+  mode,
+  menus,
+  categories,
+  defaultSeo,
+}) {
   return (
     <nav
       className={`max-w-7xl mx-auto flex ${
@@ -17,12 +23,12 @@ export default function Navbar({ setOpen, mode }) {
       aria-label="Global"
     >
       <div className="flex lg:flex-1">
-        <Link href="/" className="-m-1.5 p-1.5">
-          <span className="sr-only">Your Company</span>
+        <Link href="/" className="-m-1 p-1">
+          <span className="sr-only">{defaultSeo.schema.companyName}</span>
           <img
-            className="h-8 w-auto"
-            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-            alt=""
+            className="h-10 w-auto"
+            src={defaultSeo.schema.companyLogo.sourceUrl}
+            alt={defaultSeo.schema.companyLogo.altText}
           />
         </Link>
       </div>
@@ -37,7 +43,7 @@ export default function Navbar({ setOpen, mode }) {
         </button>
       </div>
       <div className="hidden lg:flex lg:gap-x-4">
-        <MainMenu mode={mode} />
+        <MainMenu mode={mode} menus={menus} planCategories={categories} />
       </div>
       <div className="hidden lg:flex lg:flex-1 lg:justify-end">
         <ContactButton />

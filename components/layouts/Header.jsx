@@ -3,7 +3,7 @@ import Navbar from "../navs/Navbar";
 // import NavbarMobile from "../navs/NavbarMobile";
 import SlideOver from "../navs/SlideOver";
 
-const Header = () => {
+const Header = ({ menus, categories, defaultSeo }) => {
   const [open, setOpen] = useState(false);
   const [mode, setMode] = useState("dark");
 
@@ -29,9 +29,22 @@ const Header = () => {
         mode === "light" ? "bg-white" : "bg-transparent"
       }`}
     >
-      <Navbar open={open} setOpen={setOpen} mode={mode} />
+      <Navbar
+        open={open}
+        setOpen={setOpen}
+        mode={mode}
+        menus={menus}
+        categories={categories}
+        defaultSeo={defaultSeo}
+      />
       {/* <NavbarMobile open={open} setOpen={setOpen} /> */}
-      <SlideOver open={open} setOpen={setOpen} />
+      <SlideOver
+        open={open}
+        setOpen={setOpen}
+        menus={menus}
+        categories={categories}
+        defaultSeo={defaultSeo}
+      />
     </header>
   );
 };

@@ -4,6 +4,7 @@ import {
   HiOutlineMapPin,
 } from "react-icons/hi2";
 import Contact from "../forms/Contact";
+import SocialMenu from "../menus/SocialMenu";
 
 const features = [
   {
@@ -61,6 +62,24 @@ export default function ContactSection() {
                 </div>
               ))}
             </dl>
+            <div className="py-16 text-center">
+              <SocialMenu
+                social={[
+                  {
+                    name: "twitter",
+                    location: "https://twitter.com/",
+                  },
+                  {
+                    name: "facebook",
+                    location: "https://www.facebook.com",
+                  },
+                  {
+                    name: "instagram",
+                    location: "https://www.instagram.com",
+                  },
+                ]}
+              />
+            </div>
           </div>
         </div>
       </div>

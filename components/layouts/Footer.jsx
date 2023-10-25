@@ -46,7 +46,7 @@ const Footer = ({ mode = "light" }) => {
             </div>
             <div className="w-full lg:w-8/12 px-4">
               <div className="flex flex-wrap items-top mb-6">
-                <div className="w-full lg:w-4/12 px-4 ml-auto">
+                <div className="w-full md:w-4/12 px-4 ml-auto">
                   <FooterMenu
                     mode={mode}
                     title="Usefull links"
@@ -58,7 +58,7 @@ const Footer = ({ mode = "light" }) => {
                     ]}
                   />
                 </div>
-                <div className="w-full lg:w-4/12 px-4 ml-auto">
+                <div className="w-full md:w-4/12 px-4 ml-auto">
                   <FooterMenu
                     mode={mode}
                     title="Usefull links"
@@ -70,7 +70,7 @@ const Footer = ({ mode = "light" }) => {
                     ]}
                   />
                 </div>
-                <div className="w-full lg:w-4/12 px-4 ml-auto">
+                <div className="w-full md:w-4/12 px-4 ml-auto">
                   <FooterMenu
                     mode={mode}
                     title="Other Resources"

@@ -10,12 +10,16 @@ import Stats from "../components/contentUI/Stats";
 import Pricing from "../components/contentUI/Pricing";
 import PricingCard from "../components/contentUI/PricingCard";
 import ContactSection from "../components/sections/ContactSection";
-import Modal from "../components/contentUI/Modal";
 import SliderList from "../components/contentUI/SliderList";
+import client from "../apollo/client";
+import { GET_PAGE } from "../apollo/queries/pages/get-page";
 
-export default function IndexPage() {
+export default function IndexPage({ data }) {
+  console.log(data);
+
+  const { menus, categories, seo } = data;
   return (
-    <Layout>
+    <Layout menus={menus} categories={categories} defaultSeo={seo}>
       <Slider
         className="bg-white"
         slidesPerView={1}
@@ -299,4 +303,15 @@ export default function IndexPage() {
       <SliderList />
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const { data, errors } = await client.query({
+    query: GET_PAGE,
+    variables: {
+      uri: "/",
+    },
+  });
+
+  return { props: { data: data || {} } };
 }
