@@ -9,9 +9,10 @@ const AbsoluteFooter = ({ mode }) => {
               mode === "light" ? "text-gray-600" : "text-gray-300"
             } font-semibold py-1`}
           >
-            Copyright © {new Date().getFullYear()} Notus NextJS by{" "}
+            Copyright © {new Date().getFullYear()} powered by{" "}
             <a
-              href="https://www.creative-tim.com?ref=nnjs-footer"
+              href="https://www.motify.gr"
+              target="_blank"
               className="text-indigo-600 hover:text-indigo-400"
             >
               Motify Athens

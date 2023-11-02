@@ -26,7 +26,7 @@ const Header = ({ menus, categories, defaultSeo }) => {
   return (
     <header
       className={`fixed w-full inset-x-0 top-0 z-20 ${
-        mode === "light" ? "bg-white" : "bg-transparent"
+        mode === "light" ? "bg-white" : "bg-white/20"
       }`}
     >
       <Navbar

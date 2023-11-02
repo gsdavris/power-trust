@@ -1,0 +1,327 @@
+const HeroSliderFragment = `
+    heroSlider {
+      sliders
+      slide1 {
+        cta {
+          label
+          type
+          url
+          path {
+              ... on Post {
+                id
+                title
+                uri
+              }
+              ... on Page {
+                id
+                title
+                uri
+              }
+              ... on Plan {
+                id
+                title
+                uri
+              }
+            }
+          urlType
+        }
+        cta1 {
+          label
+          type
+          url
+          path {
+              ... on Post {
+                id
+                title
+                uri
+              }
+              ... on Page {
+                id
+                title
+                uri
+              }
+              ... on Plan {
+                id
+                title
+                uri
+              }
+            }
+          urlType
+        }
+        cta2 {
+          label
+          type
+          url
+          path {
+              ... on Post {
+                id
+                title
+                uri
+              }
+              ... on Page {
+                id
+                title
+                uri
+              }
+              ... on Plan {
+                id
+                title
+                uri
+              }
+            }
+          urlType
+        }
+        ctas
+        description
+        image {
+          altText
+          sourceUrl
+        }
+        opacity
+        subtitle
+        title
+      }
+      slide2 {
+        cta {
+          label
+          type
+          url
+          path {
+              ... on Post {
+                id
+                title
+                uri
+              }
+              ... on Page {
+                id
+                title
+                uri
+              }
+              ... on Plan {
+                id
+                title
+                uri
+              }
+            }
+          urlType
+        }
+        cta1 {
+          label
+          type
+          url
+          path {
+              ... on Post {
+                id
+                title
+                uri
+              }
+              ... on Page {
+                id
+                title
+                uri
+              }
+              ... on Plan {
+                id
+                title
+                uri
+              }
+            }
+          urlType
+        }
+        cta2 {
+          label
+          type
+          url
+          path {
+              ... on Post {
+                id
+                title
+                uri
+              }
+              ... on Page {
+                id
+                title
+                uri
+              }
+              ... on Plan {
+                id
+                title
+                uri
+              }
+            }
+          urlType
+        }
+        ctas
+        description
+        image {
+          altText
+          sourceUrl
+        }
+        opacity
+        subtitle
+        title
+      }
+      slide3 {
+        cta {
+          label
+          type
+          url
+          path {
+              ... on Post {
+                id
+                title
+                uri
+              }
+              ... on Page {
+                id
+                title
+                uri
+              }
+              ... on Plan {
+                id
+                title
+                uri
+              }
+            }
+          urlType
+        }
+        cta1 {
+          label
+          type
+          url
+          path {
+              ... on Post {
+                id
+                title
+                uri
+              }
+              ... on Page {
+                id
+                title
+                uri
+              }
+              ... on Plan {
+                id
+                title
+                uri
+              }
+            }
+          urlType
+        }
+        cta2 {
+          label
+          type
+          url
+          path {
+              ... on Post {
+                id
+                title
+                uri
+              }
+              ... on Page {
+                id
+                title
+                uri
+              }
+              ... on Plan {
+                id
+                title
+                uri
+              }
+            }
+          urlType
+        }
+        ctas
+        description
+        image {
+          altText
+          sourceUrl
+        }
+        opacity
+        subtitle
+        title
+      }
+      slide4 {
+        cta {
+          label
+          type
+          url
+          path {
+              ... on Post {
+                id
+                title
+                uri
+              }
+              ... on Page {
+                id
+                title
+                uri
+              }
+              ... on Plan {
+                id
+                title
+                uri
+              }
+            }
+          urlType
+        }
+        cta1 {
+          label
+          type
+          url
+          path {
+              ... on Post {
+                id
+                title
+                uri
+              }
+              ... on Page {
+                id
+                title
+                uri
+              }
+              ... on Plan {
+                id
+                title
+                uri
+              }
+            }
+          urlType
+        }
+        cta2 {
+          label
+          type
+          url
+          path {
+              ... on Post {
+                id
+                title
+                uri
+              }
+              ... on Page {
+                id
+                title
+                uri
+              }
+              ... on Plan {
+                id
+                title
+                uri
+              }
+            }
+          urlType
+        }
+        ctas
+        description
+        image {
+          altText
+          sourceUrl
+        }
+        opacity
+        subtitle
+        title
+      }
+    }
+`;
+
+export default HeroSliderFragment;

@@ -23,12 +23,12 @@ export default function Navbar({
       aria-label="Global"
     >
       <div className="flex lg:flex-1">
-        <Link href="/" className="-m-1 p-1">
-          <span className="sr-only">{defaultSeo.schema.companyName}</span>
+        <Link href="/" className="-my-6 p-1">
+          <span className="sr-only">{defaultSeo?.schema.companyName}</span>
           <img
-            className="h-10 w-auto"
-            src={defaultSeo.schema.companyLogo.sourceUrl}
-            alt={defaultSeo.schema.companyLogo.altText}
+            className="h-12 w-auto"
+            src={defaultSeo?.schema.companyLogo.sourceUrl}
+            alt={defaultSeo?.schema.companyLogo.altText}
           />
         </Link>
       </div>

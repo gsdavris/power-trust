@@ -2,14 +2,15 @@ import { FaCheck } from "react-icons/fa6";
 
 const PricingCard = ({ pricingData }) => {
   return (
-    <div className="bg-white transition-all flex-1 hover:-translate-y-1 hover:scale-105 shadow hover:shadow-md mx-auto min-w-[320px] max-w-md rounded-3xl ring-1 ring-gray-200 lg:mx-0">
+    <div className="bg-white transition-all flex-col justify-between hover:-translate-y-1 hover:scale-105 shadow hover:shadow-md mx-auto min-w-[320px] max-w-md rounded-3xl ring-1 ring-gray-200 lg:mx-0">
       <div className="p-8 sm:p-10 lg:flex-auto">
         <h3 className="text-2xl font-bold tracking-tight text-gray-900">
           {pricingData.title}
         </h3>
-        <p className="mt-6 text-base leading-7 text-gray-600">
-          {pricingData.description}
-        </p>
+        <div
+          className="mt-6 text-base leading-7 text-gray-600"
+          dangerouslySetInnerHTML={{ __html: pricingData.description }}
+        />
         <div className="mt-10 flex items-center gap-x-4">
           <h4 className="flex-none text-sm font-semibold leading-6 text-indigo-600">
             What’s included
@@ -20,16 +21,31 @@ const PricingCard = ({ pricingData }) => {
           role="list"
           className="mt-8 grid grid-cols-1 gap-4 text-sm leading-6 text-gray-600 sm:grid-cols-2 sm:gap-6"
         >
-          {pricingData.includedFeatures.map((feature) => (
-            <li key={feature} className="flex gap-x-3">
-              <FaCheck
-                className="h-6 w-5 flex-none text-indigo-600"
-                aria-hidden="true"
-              />
-              {feature}
-            </li>
-          ))}
+          {pricingData.includedFeatures.length <= 4
+            ? pricingData.includedFeatures.map((feature) => (
+                <li key={feature.id} className="flex gap-x-3">
+                  <FaCheck
+                    className="h-6 w-5 flex-none text-indigo-600"
+                    aria-hidden="true"
+                  />
+                  {feature.name}
+                </li>
+              ))
+            : pricingData.includedFeatures.slice(0, 4).map((feature) => (
+                <li key={feature.id} className="flex gap-x-3">
+                  <FaCheck
+                    className="h-6 w-5 flex-none text-indigo-600"
+                    aria-hidden="true"
+                  />
+                  {feature.name}
+                </li>
+              ))}
         </ul>
+        {pricingData.includedFeatures.length > 4 && (
+          <p className="text-sm font-semibold leading-6 text-indigo-600 my-4">
+            και ακόμα περισσότερα...
+          </p>
+        )}
       </div>
       <div className="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
         <div className="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">

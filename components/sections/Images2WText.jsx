@@ -1,5 +1,5 @@
-import Banner from "./Banner";
-import InfoText from "./InfoText";
+import Banner from "../contentUI/Banner";
+import InfoText from "../contentUI/InfoText";
 
 const Images2WText = ({ mode, imageUrl1, alt1, imageUrl2, alt2, ...rest }) => {
   return (

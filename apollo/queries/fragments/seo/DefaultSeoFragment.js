@@ -1,13 +1,16 @@
 const DefaultSeoFragment = `
+favicon {
+    sourceUrl
+}
 seo {
-    schema {
-      companyLogo {
-        altText
-        sourceUrl
-      }
-      companyName
+  schema {
+    companyLogo {
+      altText
+      sourceUrl
     }
+    companyName
   }
+}
 `;
 
 export default DefaultSeoFragment;

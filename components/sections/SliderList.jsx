@@ -1,5 +1,5 @@
 import Slider from "../sliders/Slider";
-import CategoryCard from "./CategoryCard";
+import CategoryCard from "../contentUI/CategoryCard";
 
 const categories = [
   {
