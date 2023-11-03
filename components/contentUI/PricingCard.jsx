@@ -2,7 +2,7 @@ import { FaCheck } from "react-icons/fa6";
 
 const PricingCard = ({ pricingData }) => {
   return (
-    <div className="bg-white transition-all flex-col justify-between hover:-translate-y-1 hover:scale-105 shadow hover:shadow-md mx-auto min-w-[320px] max-w-md rounded-3xl ring-1 ring-gray-200 lg:mx-0">
+    <div className="bg-white transition-all flex-1 justify-between shadow hover:shadow-md rounded-3xl ring-1 ring-gray-200">
       <div className="p-8 sm:p-10 lg:flex-auto">
         <h3 className="text-2xl font-bold tracking-tight text-gray-900">
           {pricingData.title}
@@ -13,7 +13,7 @@ const PricingCard = ({ pricingData }) => {
         />
         <div className="mt-10 flex items-center gap-x-4">
           <h4 className="flex-none text-sm font-semibold leading-6 text-indigo-600">
-            What’s included
+            Τι κερδίζετε
           </h4>
           <div className="h-px flex-auto bg-gray-100" />
         </div>

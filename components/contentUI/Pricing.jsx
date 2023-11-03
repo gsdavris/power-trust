@@ -1,3 +1,5 @@
+import Slider from "../sliders/Slider";
+
 export default function Pricing({ title, description, children, mode }) {
   return (
     <div
@@ -22,10 +24,47 @@ export default function Pricing({ title, description, children, mode }) {
             {description}
           </p>
         </div>
-        <div className="mx-auto w-full flex flex-wrap gap-x-4 gap-y-4 pt-8 lg:pt-16 justify-center">
-          {children}
-        </div>
       </div>
+      <Slider
+        className={
+          (mode === "light" ? "white" : "bg-gray-800") +
+          "  pt-16 px-6 lg:px-8 mx-auto max-w-7xl mt-8 sm:mt-16"
+        }
+        slidesPerView={1}
+        spaceBetween={20}
+        centered-slides="true"
+        navigation={{ enabled: false }}
+        effect="slide"
+        grabCursor="true"
+        loop={false}
+        speed={500}
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
+        breakpoints={{
+          640: {
+            navigation: { enabled: true },
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            navigation: { enabled: true },
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          1024: {
+            navigation: { enabled: true },
+            slidesPerView: 3,
+            spaceBetween: 50,
+          },
+        }}
+        injectStyles={[
+          `
+        :host {
+            --swiper-theme-color: white;
+        }`,
+        ]}
+      >
+        {children}
+      </Slider>
     </div>
   );
 }
