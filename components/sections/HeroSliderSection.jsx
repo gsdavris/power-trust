@@ -79,10 +79,10 @@ const HeroSliderSection = ({ data }) => {
       )}
       {data.slide2 && (
         <Banner
-          imageUrl={data.slide1.image.sourceUrl}
+          imageUrl={data.slide2.image.sourceUrl}
           minHeight="screen"
-          alt={data.slide1.image.altText}
-          overlayOpacity={data.slide1.opacity}
+          alt={data.slide2.image.altText}
+          overlayOpacity={data.slide2.opacity}
         >
           <InfoText
             mode="dark"
@@ -116,10 +116,10 @@ const HeroSliderSection = ({ data }) => {
       )}
       {data.slide3 && (
         <Banner
-          imageUrl={data.slide1.image.sourceUrl}
+          imageUrl={data.slide3.image.sourceUrl}
           minHeight="screen"
-          alt={data.slide1.image.altText}
-          overlayOpacity={data.slide1.opacity}
+          alt={data.slide3.image.altText}
+          overlayOpacity={data.slide3.opacity}
         >
           <InfoText
             mode="dark"
@@ -153,19 +153,38 @@ const HeroSliderSection = ({ data }) => {
       )}
       {data.slide4 && (
         <Banner
-          imageUrl="/people.jpg"
+          imageUrl={data.slide4.image.sourceUrl}
           minHeight="screen"
-          alt="people"
-          overlayOpacity="50"
+          alt={data.slide4.image.altText}
+          overlayOpacity={data.slide4.opacity}
         >
           <InfoText
             mode="dark"
-            title="Supercharge your web applications"
-            subtitle="What's new: Just shipped v1.0"
-            description="Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua."
-            cta1={{ label1: "Read more", path1: "/#" }}
-            cta2={{ label2: "Get started", path2: "/#" }}
-            cta3={{ label3: "Learn more", path3: "/#" }}
+            contactModalButton="true"
+            title={data.slide4.title}
+            subtitle={data.slide4.subtitle}
+            description={data.slide4.description}
+            cta1={{
+              label1: data.slide4.cta.label,
+              path1:
+                data.slide4.cta.urlType === "internal"
+                  ? data.slide4.cta.path?.uri
+                  : data.slide4.cta.url,
+            }}
+            cta2={{
+              label1: data.slide4.cta1.label,
+              path1:
+                data.slide4.cta1.urlType === "internal"
+                  ? data.slide4.cta1.path?.uri
+                  : data.slide4.cta1.url,
+            }}
+            cta3={{
+              label1: data.slide4.cta2.label,
+              path1:
+                data.slide4.cta2.urlType === "internal"
+                  ? data.slide4.cta2.path?.uri
+                  : data.slide4.cta2.url,
+            }}
           />
         </Banner>
       )}

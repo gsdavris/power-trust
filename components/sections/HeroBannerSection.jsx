@@ -1,7 +1,8 @@
 import Banner from "../contentUI/Banner";
 import InfoText from "../contentUI/InfoText";
 
-const HeroBannerSection = () => {
+const HeroBannerSection = ({ data }) => {
+  console.log(data);
   return (
     <Banner
       imageUrl="/sunset.jpg"

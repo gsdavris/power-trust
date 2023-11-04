@@ -17,6 +17,7 @@ pricing {
               charges
               relatedLinks
             }
+            uri
           }
         }
         mode

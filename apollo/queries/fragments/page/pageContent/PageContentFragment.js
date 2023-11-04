@@ -1,3 +1,4 @@
+import HeroBannerFragment from "./HeroBannerFragment";
 import HeroSliderFragment from "./HeroSliderFragment";
 import InfoTextFragment from "./InfoTextFragment";
 import PricingFragment from "./PricingFragment";
@@ -10,6 +11,7 @@ const PageContentFragment = `
     ${InfoTextFragment}
     ${StatsFragment}
     ${PricingFragment}
+    ${HeroBannerFragment}
 }
 `;
 
