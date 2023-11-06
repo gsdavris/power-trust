@@ -12,13 +12,14 @@ const Card = ({
   iconName,
   iconColor,
   iconBackground,
-  mode = "light",
+  parent,
+  mode,
 }) => {
   return (
     <div className="w-full text-center">
       <div
         className={`relative flex flex-col min-w-0 break-words ${
-          mode === "light" ? "bg-white" : "bg-gray-900"
+          mode === "light" ? "bg-white" : "bg-gray-800"
         } w-full hover:shadow shadow-md rounded-lg`}
       >
         {path ? (
@@ -41,8 +42,17 @@ const Card = ({
               <div
                 className={`relative text-center inline-flex items-center justify-center h-14 w-14 mb-5 hover:shadow shadow-md rounded-full ${iconBackground}`}
               >
-                {getIconByName(iconName, iconColor + " h-6 w-6")}
+                {getIconByName(iconName, iconColor, " h-6 w-6")}
               </div>
+              {parent && (
+                <p
+                  className={`mt-2 ${
+                    mode === "light" ? "text-gray-600" : "text-gray-300"
+                  } text-sm font-semibold leading-8`}
+                >
+                  {parent}
+                </p>
+              )}
               <h6
                 className={`text-xl font-bold ${
                   mode === "light" ? "text-gray-900" : "text-gray-100"
@@ -50,20 +60,19 @@ const Card = ({
               >
                 {title}
               </h6>
-              <p
+              <div
                 className={`mt-2 mb-4 ${
                   mode === "light" ? "text-gray-600" : "text-gray-300"
                 } text-lg leading-8`}
-              >
-                {description}
-              </p>
+                dangerouslySetInnerHTML={{ __html: description }}
+              />
             </div>
           </Link>
         ) : (
           <>
             {imageUrl && alt && (
               <div
-                className={`relative w-full ${imageHeight} overflow-hidden rounded-t -mb-12`}
+                className={`relative w-full ${imageHeight} overflow-hidden rounded-t  -mb-12`}
               >
                 <Image
                   src={imageUrl}

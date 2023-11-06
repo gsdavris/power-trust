@@ -2,24 +2,45 @@ import Banner from "../contentUI/Banner";
 import InfoText from "../contentUI/InfoText";
 
 const HeroBannerSection = ({ data }) => {
-  console.log(data);
   return (
-    <Banner
-      imageUrl="/sunset.jpg"
-      minHeight="screen"
-      alt="sunset"
-      overlayOpacity="50"
-    >
-      <InfoText
-        mode="dark"
-        title="Data to enrich your online business"
-        subtitle="Announcing our next round of funding."
-        description="Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua."
-        cta1={{ label1: "Read more", path1: "/#" }}
-        cta2={{ label2: "Get started", path2: "/#" }}
-        cta3={{ label3: "Learn more", path3: "/#" }}
-      />
-    </Banner>
+    <section>
+      <Banner
+        imageUrl={data?.image?.sourceUrl}
+        minHeight="min-h-screen"
+        alt={data?.image?.altText}
+        overlayOpacity={data?.opacity}
+      >
+        <InfoText
+          textAlign="center"
+          mode="dark"
+          contactModalButton="true"
+          title={data.title}
+          subtitle={data.subtitle}
+          description={data.description}
+          cta1={{
+            label1: data.cta?.label,
+            path1:
+              data.cta?.urlType === "internal"
+                ? data.cta.path?.uri
+                : data.cta?.url,
+          }}
+          cta2={{
+            label1: data?.cta1?.label,
+            path1:
+              data.cta1.urlType === "internal"
+                ? data?.cta1?.path?.uri
+                : data?.cta1?.url,
+          }}
+          cta3={{
+            label1: data?.cta2?.label,
+            path1:
+              data.cta2?.urlType === "internal"
+                ? data.cta2?.path?.uri
+                : data.cta2?.url,
+          }}
+        />
+      </Banner>
+    </section>
   );
 };
 

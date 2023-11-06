@@ -4,30 +4,42 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 const Layout = ({ children, data }) => {
-  const { menus, categories, seo, favicon, page } = data;
+  const { menus, categories, seo, favicon, page, plan, category } = data;
+
+  let pageSeo;
+  if (page) {
+    pageSeo = page.seo;
+  }
+  if (plan) {
+    pageSeo = plan.seo;
+  }
+  if (category) {
+    pageSeo = category.seo;
+  }
+
   return (
     <>
       <Head>
         <link rel="shortcut icon" href={favicon?.sourceUrl} />
       </Head>
       <NextSeo
-        title={page?.seo.title}
-        description={page?.seo.metaDesc}
-        canonical={page?.seo.canonical}
+        title={pageSeo?.title}
+        description={pageSeo?.metaDesc}
+        canonical={pageSeo?.canonical}
         openGraph={{
-          url: page?.seo.opengraphUrl,
-          title: page?.seo.opengraphTitle,
-          description: page?.seo.opengraphDescription,
+          url: pageSeo?.opengraphUrl,
+          title: pageSeo?.opengraphTitle,
+          description: pageSeo?.opengraphDescription,
           images: [
             {
-              url: page?.seo.opengraphImage.sourceUrl,
-              width: page?.seo.opengraphImage.mediaDetails.width,
-              height: page?.seo.opengraphImage.mediaDetails.height,
-              alt: page?.seo.opengraphImage.altText,
-              type: page?.seo.opengraphImage.mediaType,
+              url: pageSeo?.opengraphImage?.sourceUrl,
+              width: pageSeo?.opengraphImage?.mediaDetails.width,
+              height: pageSeo?.opengraphImage?.mediaDetails.height,
+              alt: pageSeo?.opengraphImage?.altText,
+              type: pageSeo?.opengraphImage?.mediaType,
             },
           ],
-          siteName: page?.seo.title,
+          siteName: pageSeo?.title,
         }}
         twitter={{
           handle: "@handle",

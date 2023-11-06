@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { Tab, Disclosure } from "@headlessui/react";
 import { HiPlus, HiMinus } from "react-icons/hi2";
+import Link from "next/link";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -69,7 +70,7 @@ const MobileMenu = ({ menus, planCategories }) => {
                         className="h-full object-cover object-center"
                       />
                     </div>
-                    <a
+                    <Link
                       href={item.uri}
                       className="mt-6 block font-medium text-gray-900"
                     >
@@ -78,7 +79,7 @@ const MobileMenu = ({ menus, planCategories }) => {
                         aria-hidden="true"
                       />
                       {item.title}
-                    </a>
+                    </Link>
                     <p aria-hidden="true" className="mt-1">
                       Μάθε περισσότερα
                     </p>
@@ -109,12 +110,13 @@ const MobileMenu = ({ menus, planCategories }) => {
                       </h3>
                       <Disclosure.Panel className="pt-4">
                         {section.items.map((item) => (
-                          <div
+                          <Link
+                            href={item.uri}
                             key={item.id}
                             className="block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-600 hover:bg-gray-50"
                           >
                             {item.label}
-                          </div>
+                          </Link>
                         ))}
                       </Disclosure.Panel>
                     </>

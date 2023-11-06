@@ -2,7 +2,16 @@ import Link from "next/link";
 import InfoText from "../contentUI/InfoText";
 import Slider from "./Slider";
 
-const HalfSlider = ({ children, mode = "light" }) => {
+const HalfSlider = ({
+  children,
+  mode = "light",
+  title,
+  subtitle,
+  description,
+  cta,
+  cta1,
+  cta2,
+}) => {
   return (
     <section
       className={`py-16 ${mode === "light" ? "bg-gray-100" : "bg-gray-900"}`}
@@ -57,14 +66,26 @@ const HalfSlider = ({ children, mode = "light" }) => {
           </div>
           <div className="w-full md:w-4/12 mx-auto">
             <InfoText
+              contactModalButton
               mode={mode}
               textAlign="left"
-              title="Data to enrich your online business"
-              subtitle="Announcing our next round of funding."
-              description="Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua."
-              cta1={{ label1: "Read more", path1: "/#" }}
-              cta2={{ label2: "Get started", path2: "/#" }}
-              cta3={{ label3: "Learn more", path3: "/#" }}
+              title={title}
+              subtitle={subtitle}
+              description={description}
+              cta1={{
+                label1: cta?.label,
+                path1: cta?.urlType === "internal" ? cta?.path?.uri : cta?.url,
+              }}
+              cta2={{
+                label2: cta1?.label,
+                path2:
+                  cta1?.urlType === "internal" ? cta1?.path?.uri : cta1?.url,
+              }}
+              cta3={{
+                label3: cta2.label,
+                path3:
+                  cta2?.urlType === "internal" ? cta2?.path?.uri : cta2?.url,
+              }}
             />
           </div>
         </div>

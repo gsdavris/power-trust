@@ -1,21 +1,21 @@
 import Slider from "../sliders/Slider";
 import CategoryCard from "../contentUI/CategoryCard";
 
-export default function SliderList({ data }) {
+export default function SingleSliderList({ mode = "dark", title, items }) {
   return (
-    <section className={data?.mode === "light" ? "bg-gray-100" : "bg-gray-800"}>
+    <section className={mode === "light" ? "bg-gray-100" : "bg-gray-800"}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl py-16 sm:py-20 lg:max-w-none lg:py-32">
           <h2
             className={`text-3xl sm:text-4xl font-bold tracking-tight ${
-              data?.mode === "light" ? "text-gray-900" : "text-gray-100"
+              mode === "light" ? "text-gray-900" : "text-gray-100"
             }`}
           >
-            {data?.title}
+            {title}
           </h2>
           <Slider
             className={
-              (data?.mode === "light" ? "bg-gray-100" : "bg-gray-800") +
+              (mode === "light" ? "bg-gray-100" : "bg-gray-800") +
               " mt-8 sm:mt-16"
             }
             slidesPerView={1}
@@ -51,13 +51,16 @@ export default function SliderList({ data }) {
         }`,
             ]}
           >
-            {data?.items?.map((category) => (
-              <CategoryCard
-                mode={data?.mode}
-                key={category.id}
-                category={category}
-              />
-            ))}
+            {items
+              ?.slice(0)
+              .reverse()
+              .map((category) => (
+                <CategoryCard
+                  mode={mode}
+                  key={category.id}
+                  category={category}
+                />
+              ))}
           </Slider>
         </div>
       </div>

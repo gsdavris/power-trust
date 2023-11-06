@@ -19,7 +19,7 @@ const PageContent = ({ content }) => {
     heroBanner: HeroBannerSection,
     cards: CardsSection,
     halfSlider: HalfSliderSection,
-    images2WText: Images2WText,
+    imagesWText: Images2WText,
     sliderList: SliderList,
     contact: ContactSection,
   };

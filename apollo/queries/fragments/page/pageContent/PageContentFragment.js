@@ -1,7 +1,11 @@
+import CardsFragment from "./CardsFragment";
+import HalfSliderFragment from "./HalfSliderFragment";
 import HeroBannerFragment from "./HeroBannerFragment";
 import HeroSliderFragment from "./HeroSliderFragment";
+import Images2WTextFragment from "./Images2WTextFragment";
 import InfoTextFragment from "./InfoTextFragment";
 import PricingFragment from "./PricingFragment";
+import SliderListFragment from "./SliderListFragment";
 import StatsFragment from "./StatsFragment";
 
 const PageContentFragment = `
@@ -12,6 +16,10 @@ const PageContentFragment = `
     ${StatsFragment}
     ${PricingFragment}
     ${HeroBannerFragment}
+    ${CardsFragment}
+    ${HalfSliderFragment}
+    ${Images2WTextFragment}
+    ${SliderListFragment}
 }
 `;
 

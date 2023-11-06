@@ -1,4 +1,4 @@
-const MenuFragment  = ` 
+const MenuFragment = ` 
     menus {
         nodes {
             name
@@ -8,7 +8,7 @@ const MenuFragment  = `
             menuItems(first: 100) {
                 nodes {
                     label
-                    path
+                    uri
                     id
                     parentId
                 }

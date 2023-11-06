@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { HiOutlineBars3 } from "react-icons/hi2";
 import MainMenu from "../menus/MainMenu";
-import ProfileDropdown from "../dropdowns/ProfileDropdown";
 import ContactButton from "../contentUI/ContactButton";
 
 function classNames(...classes) {
@@ -46,7 +45,7 @@ export default function Navbar({
         <MainMenu mode={mode} menus={menus} planCategories={categories} />
       </div>
       <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-        <ContactButton />
+        <ContactButton label="Επικοινωνία" />
       </div>
     </nav>
   );

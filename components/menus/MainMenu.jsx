@@ -1,5 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import { Popover, Transition } from "@headlessui/react";
+import Link from "next/link";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -91,7 +92,7 @@ const MainMenu = ({ mode, menus, planCategories }) => {
                                         className="h-full object-cover object-center"
                                       />
                                     </div>
-                                    <a
+                                    <Link
                                       href={item.uri}
                                       className="mt-6 block font-medium text-gray-900 text-base"
                                     >
@@ -100,7 +101,7 @@ const MainMenu = ({ mode, menus, planCategories }) => {
                                         aria-hidden="true"
                                       />
                                       {item.title}
-                                    </a>
+                                    </Link>
                                     <p
                                       aria-hidden="true"
                                       className="mt-1 text-sm"
@@ -113,12 +114,13 @@ const MainMenu = ({ mode, menus, planCategories }) => {
                               <div className="row-start-1 grid grid-cols-3 gap-x-8 gap-y-10 text-base">
                                 {category.sections.map((section) => (
                                   <div key={section.id}>
-                                    <p
+                                    <Link
+                                      href={section.uri}
                                       id={`${section.label}-heading`}
-                                      className="font-semibold text-gray-900"
+                                      className="font-semibold text-gray-900 hover:text-indigo-700"
                                     >
                                       {section.label}
-                                    </p>
+                                    </Link>
                                     <ul
                                       role="list"
                                       aria-labelledby={`${section.label}-heading`}
@@ -126,12 +128,12 @@ const MainMenu = ({ mode, menus, planCategories }) => {
                                     >
                                       {section.items.map((item) => (
                                         <li key={item.id} className="flex">
-                                          <a
-                                            href={item.path}
+                                          <Link
+                                            href={item.uri}
                                             className="hover:text-gray-800 text-sm"
                                           >
                                             {item.label}
-                                          </a>
+                                          </Link>
                                         </li>
                                       ))}
                                     </ul>

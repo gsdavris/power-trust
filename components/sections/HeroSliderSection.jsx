@@ -43,7 +43,7 @@ const HeroSliderSection = ({ data }) => {
       {data.slide1 && (
         <Banner
           imageUrl={data.slide1.image.sourceUrl}
-          minHeight="screen"
+          minHeight="min-h-screen"
           alt={data.slide1.image.altText}
           overlayOpacity={data.slide1.opacity}
         >
@@ -80,7 +80,7 @@ const HeroSliderSection = ({ data }) => {
       {data.slide2 && (
         <Banner
           imageUrl={data.slide2.image.sourceUrl}
-          minHeight="screen"
+          minHeight="min-h-screen"
           alt={data.slide2.image.altText}
           overlayOpacity={data.slide2.opacity}
         >
@@ -117,7 +117,7 @@ const HeroSliderSection = ({ data }) => {
       {data.slide3 && (
         <Banner
           imageUrl={data.slide3.image.sourceUrl}
-          minHeight="screen"
+          minHeight="min-h-screen"
           alt={data.slide3.image.altText}
           overlayOpacity={data.slide3.opacity}
         >
@@ -154,7 +154,7 @@ const HeroSliderSection = ({ data }) => {
       {data.slide4 && (
         <Banner
           imageUrl={data.slide4.image.sourceUrl}
-          minHeight="screen"
+          minHeight="min-h-screen"
           alt={data.slide4.image.altText}
           overlayOpacity={data.slide4.opacity}
         >

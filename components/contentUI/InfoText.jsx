@@ -7,6 +7,7 @@ const InfoText = ({
   title = "",
   subtitle = "",
   description = "",
+  htmlDescription = "",
   cta1 = { label1: "", path1: "" },
   cta2 = { label2: "", path2: "" },
   cta3 = { label3: "", path3: "" },
@@ -14,7 +15,7 @@ const InfoText = ({
   return (
     <div className="mx-auto max-w-2xl py-16 px-4">
       <div
-        className={`hidden sm:mb-8 sm:flex sm:justify-center ${
+        className={`mb-8 justify-center flex text-${
           textAlign === "left"
             ? "start"
             : textAlign === "right"
@@ -50,13 +51,23 @@ const InfoText = ({
         >
           {title}
         </h1>
-        <p
-          className={`mt-6 text-lg leading-8 ${
-            mode === "light" ? "text-gray-600" : "text-gray-300"
-          }`}
-        >
-          {description}
-        </p>
+        {description && (
+          <p
+            className={`mt-6 text-lg leading-8 ${
+              mode === "light" ? "text-gray-600" : "text-gray-300"
+            }`}
+          >
+            {description}
+          </p>
+        )}
+        {htmlDescription && (
+          <div
+            className={`mt-6 text-lg leading-8 ${
+              mode === "light" ? "text-gray-600" : "text-gray-300"
+            }`}
+            dangerouslySetInnerHTML={{ __html: htmlDescription }}
+          />
+        )}
         <div
           className={`mt-10 flex items-center justify-${
             textAlign === "left"

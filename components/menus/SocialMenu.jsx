@@ -11,7 +11,7 @@ const SocialMenu = ({ social }) => {
           href={item.location}
           target="_blank"
         >
-          {getIconByName(item.name, "h-6 w-6")}
+          {getIconByName(item.name, "", "h-6 w-6")}
         </Link>
       ))}
     </>
