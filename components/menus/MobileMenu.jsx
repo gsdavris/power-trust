@@ -9,6 +9,7 @@ function classNames(...classes) {
 
 const MobileMenu = ({ menus, planCategories }) => {
   const mainMenu = menus.nodes.find((menu) => menu.slug === "main");
+  const secondaryMenu = menus?.nodes.find((menu) => menu.slug === "secondary");
 
   const categories = mainMenu.menuItems.nodes
     .filter((category) => category.parentId === null)
@@ -27,14 +28,6 @@ const MobileMenu = ({ menus, planCategories }) => {
         })),
     }));
 
-  const navigation = {
-    pages: [
-      { id: "features", name: "Features", href: "#" },
-      { id: "marketplace", name: "Marketplace", href: "#" },
-      { id: "company", name: "Company", href: "#" },
-    ],
-  };
-
   return (
     <>
       <Tab.Group as="div" className="mt-2">
@@ -46,8 +39,8 @@ const MobileMenu = ({ menus, planCategories }) => {
                 className={({ selected }) =>
                   classNames(
                     selected
-                      ? "border-indigo-600 text-indigo-600"
-                      : "border-transparent text-gray-900",
+                      ? "border-secondary text-secondary"
+                      : "border-transparent text-primary",
                     "flex-1 whitespace-nowrap border-b-2 px-1 py-4 text-base font-medium",
                   )
                 }
@@ -72,7 +65,7 @@ const MobileMenu = ({ menus, planCategories }) => {
                     </div>
                     <Link
                       href={item.uri}
-                      className="mt-6 block font-medium text-gray-900"
+                      className="mt-6 block font-medium text-primary"
                     >
                       <span
                         className="absolute inset-0 z-10"
@@ -80,7 +73,7 @@ const MobileMenu = ({ menus, planCategories }) => {
                       />
                       {item.title}
                     </Link>
-                    <p aria-hidden="true" className="mt-1">
+                    <p aria-hidden="true" className="mt-1  text-secondary">
                       Μάθε περισσότερα
                     </p>
                   </div>
@@ -127,15 +120,16 @@ const MobileMenu = ({ menus, planCategories }) => {
           ))}
         </Tab.Panels>
       </Tab.Group>
-      {navigation?.pages?.map((item) => (
-        <a
-          key={item.id}
-          href={item.href}
-          className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-        >
-          {item.name}
-        </a>
-      ))}
+      {secondaryMenu &&
+        secondaryMenu?.menuItems?.nodes.map((item) => (
+          <Link
+            key={item.id}
+            href={item.uri}
+            className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+          >
+            {item.label}
+          </Link>
+        ))}
     </>
   );
 };

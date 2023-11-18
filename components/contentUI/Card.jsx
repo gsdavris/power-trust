@@ -55,7 +55,7 @@ const Card = ({
               )}
               <h6
                 className={`text-xl font-bold ${
-                  mode === "light" ? "text-gray-900" : "text-gray-100"
+                  mode === "light" ? "text-primary" : "text-gray-100"
                 } tracking-tight sm:text-2xl`}
               >
                 {title}

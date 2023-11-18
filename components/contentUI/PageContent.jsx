@@ -9,6 +9,7 @@ import PricingSection from "../sections/PricingSection";
 import SliderList from "../sections/SliderList";
 import StatSection from "../sections/StatsSection";
 import InfoTextSection from "../sections/InfoTextSection";
+import ContentSection from "../sections/ContentSection";
 
 const PageContent = ({ content }) => {
   const sectionsMap = {
@@ -22,6 +23,7 @@ const PageContent = ({ content }) => {
     imagesWText: Images2WText,
     sliderList: SliderList,
     contact: ContactSection,
+    contentSection: ContentSection
   };
 
   const getSectionByName = (name, data) => {

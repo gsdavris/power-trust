@@ -7,7 +7,12 @@ module.exports = {
   ],
   safelist: ["h-64", "min-h-[600px]", "opacity-50"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#003462",
+        secondary: "#8bc751",
+      },
+    },
   },
   plugins: [
     require("@tailwindcss/forms"),

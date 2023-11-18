@@ -8,7 +8,7 @@ export default function SliderList({ data }) {
         <div className="mx-auto max-w-2xl py-16 sm:py-20 lg:max-w-none lg:py-32">
           <h2
             className={`text-3xl sm:text-4xl font-bold tracking-tight ${
-              data?.mode === "light" ? "text-gray-900" : "text-gray-100"
+              data?.mode === "light" ? "text-primary" : "text-secondary"
             }`}
           >
             {data?.title}

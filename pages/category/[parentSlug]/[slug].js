@@ -8,7 +8,6 @@ import Layout from "../../../components/layouts/Layout";
 import SingleSliderList from "../../../components/sections/SingleSliderList";
 
 export default function CategoryPage({ data }) {
-  console.log(data);
   const { category } = data;
   return (
     <Layout data={data}>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 import { Switch } from "@headlessui/react";
 import Loading from "../contentUI/Loading";
 import Alert from "./Alert";
@@ -42,7 +43,7 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.persist();
     e.preventDefault();
 
@@ -50,30 +51,56 @@ export default function Contact() {
     if (!firstName || !lastName || !phoneNumber || !email || !message) {
       return setValues({
         ...values,
-        error: false,
+        error: true,
         loading: false,
         responseData: {
           type: "danger",
-          message: "All fields with * are required",
+          message: "Όλα τα πεδία με * είναι υποχρεωτικά",
         },
       });
     }
-    console.log(values, agreed);
-    setValues({
-      ...values,
-      firstName: "",
-      lastName: "",
-      company: "",
-      phoneNumber: "",
-      email: "",
-      message: "",
-      error: false,
-      loading: false,
-      responseData: {
-        type: "success",
-        message: "Thank you for your message! We will contact you soon",
-      },
-    });
+
+    const { data } = await axios.post("/api/mail", values);
+
+    if (!data) {
+      return setValues({
+        ...values,
+        error: true,
+        loading: false,
+        responseData: {
+          type: "danger",
+          message: "Υπάρχει πρόβλημα! Δοκίμασε αργότερα.",
+        },
+      });
+    }
+
+    if (data.sent) {
+      setValues({
+        ...values,
+        firstName: "",
+        lastName: "",
+        company: "",
+        phoneNumber: "",
+        email: "",
+        message: "",
+        error: false,
+        loading: false,
+        responseData: {
+          type: "success",
+          message: "Ευχαριστούμε για το μήνυμά σας! Θα επικοινωνήσουμε σύντομα",
+        },
+      });
+    } else {
+      return setValues({
+        ...values,
+        error: true,
+        loading: false,
+        responseData: {
+          type: "danger",
+          message: data.message,
+        },
+      });
+    }
   };
 
   return (
@@ -93,7 +120,7 @@ export default function Contact() {
             htmlFor="firstName"
             className="block text-sm font-semibold leading-6 text-gray-900"
           >
-            First name*
+            Όνομα*
           </label>
           <div className="mt-2.5">
             <input
@@ -112,7 +139,7 @@ export default function Contact() {
             htmlFor="lastName"
             className="block text-sm font-semibold leading-6 text-gray-900"
           >
-            Last name*
+            Επώνυμο*
           </label>
           <div className="mt-2.5">
             <input
@@ -131,7 +158,7 @@ export default function Contact() {
             htmlFor="company"
             className="block text-sm font-semibold leading-6 text-gray-900"
           >
-            Company (optional)
+            Εταιρεία (προαιρετικό)
           </label>
           <div className="mt-2.5">
             <input
@@ -169,7 +196,7 @@ export default function Contact() {
             htmlFor="phone-number"
             className="block text-sm font-semibold leading-6 text-gray-900"
           >
-            Phone number*
+            Αριθμός τηλεφώνου*
           </label>
           <div className="relative mt-2.5">
             <input
@@ -188,7 +215,7 @@ export default function Contact() {
             htmlFor="message"
             className="block text-sm font-semibold leading-6 text-gray-900"
           >
-            Message*
+            Μήνυμα*
           </label>
           <div className="mt-2.5">
             <textarea
@@ -222,9 +249,9 @@ export default function Contact() {
             </Switch>
           </div>
           <Switch.Label className="text-sm leading-6 text-gray-600">
-            By selecting this, you agree to our{" "}
+            Συμφωνώ με την{" "}
             <a href="#" className="font-semibold text-indigo-600">
-              privacy&nbsp;policy
+              Πολιτική&nbsp;Απορρήτου
             </a>
             .
           </Switch.Label>
@@ -239,7 +266,7 @@ export default function Contact() {
             agreed ? "bg-indigo-600 hover:bg-indigo-500" : "bg-indigo-300"
           } px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600`}
         >
-          {loading ? <Loading /> : "Let's talk"}
+          {loading ? <Loading /> : "Αποστολή Μηνύματος"}
         </button>
       </div>
     </form>

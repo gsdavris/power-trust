@@ -51,7 +51,7 @@ const Layout = ({ children, data }) => {
       <main className="bg-white">
         <div className="relative isolate">{children}</div>
       </main>
-      <Footer menus={menus} mode="dark" />
+      <Footer menus={menus} mode="dark" planCategories={categories} />
     </>
   );
 };

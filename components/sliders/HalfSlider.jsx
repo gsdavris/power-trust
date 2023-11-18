@@ -55,11 +55,11 @@ const HalfSlider = ({
                     --swiper-scrollbar-size: 4px;
                 }`,
               ]}
-              on={{
-                slideChange: () => console.log("slide changed"),
-                progress: (s, progress) =>
-                  console.log(`progress is ${progress}`),
-              }}
+              // on={{
+              //   slideChange: () => console.log("slide changed"),
+              //   progress: (s, progress) =>
+              //     console.log(`progress is ${progress}`),
+              // }}
             >
               {children}
             </Slider>

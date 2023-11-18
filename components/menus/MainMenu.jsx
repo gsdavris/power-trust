@@ -9,15 +9,8 @@ function classNames(...classes) {
 const MainMenu = ({ mode, menus, planCategories }) => {
   const [isClient, setIsClient] = useState(false);
 
-  const navigation = {
-    pages: [
-      { id: "features", name: "Features", href: "#" },
-      { id: "marketplace", name: "Marketplace", href: "#" },
-      { id: "company", name: "Company", href: "#" },
-    ],
-  };
-
   const mainMenu = menus?.nodes.find((menu) => menu.slug === "main");
+  const secondaryMenu = menus?.nodes.find((menu) => menu.slug === "secondary");
 
   const categories = mainMenu?.menuItems.nodes
     .filter((category) => category.parentId === null)
@@ -52,7 +45,7 @@ const MainMenu = ({ mode, menus, planCategories }) => {
                     <Popover.Button
                       className={classNames(
                         open
-                          ? "border-indigo-600 text-indigo-600"
+                          ? "border-secondary text-secondary"
                           : mode === "dark"
                           ? "border-transparent text-gray-100 hover:text-indigo-200"
                           : "border-transparent text-gray-700 hover:text-indigo-700 hover:bg-gray-50",
@@ -94,7 +87,7 @@ const MainMenu = ({ mode, menus, planCategories }) => {
                                     </div>
                                     <Link
                                       href={item.uri}
-                                      className="mt-6 block font-medium text-gray-900 text-base"
+                                      className="mt-6 block font-medium text-primary text-base"
                                     >
                                       <span
                                         className="absolute inset-0 z-10"
@@ -104,7 +97,7 @@ const MainMenu = ({ mode, menus, planCategories }) => {
                                     </Link>
                                     <p
                                       aria-hidden="true"
-                                      className="mt-1 text-sm"
+                                      className="mt-1 text-sm text-secondary"
                                     >
                                       Μάθε περισσότερα
                                     </p>
@@ -117,7 +110,7 @@ const MainMenu = ({ mode, menus, planCategories }) => {
                                     <Link
                                       href={section.uri}
                                       id={`${section.label}-heading`}
-                                      className="font-semibold text-gray-900 hover:text-indigo-700"
+                                      className="font-semibold text-primary hover:text-secondary"
                                     >
                                       {section.label}
                                     </Link>
@@ -152,19 +145,20 @@ const MainMenu = ({ mode, menus, planCategories }) => {
           </div>
         </Popover.Group>
       )}
-      {navigation?.pages?.map((item) => (
-        <a
-          key={item.id}
-          href={item.href}
-          className={`rounded-lg px-3 py-2 text-sm ${
-            mode === "dark"
-              ? " text-gray-100 hover:text-indigo-200"
-              : " text-gray-700 hover:text-indigo-600 hover:bg-gray-50"
-          } font-semibold leading-6`}
-        >
-          {item.name}
-        </a>
-      ))}
+      {secondaryMenu &&
+        secondaryMenu?.menuItems.nodes.map((item) => (
+          <Link
+            key={item.id}
+            href={item.uri}
+            className={`rounded-lg px-3 py-2 text-sm ${
+              mode === "dark"
+                ? " text-gray-100 hover:text-indigo-200"
+                : " text-gray-700 hover:text-indigo-600 hover:bg-gray-50"
+            } font-semibold leading-6`}
+          >
+            {item.label}
+          </Link>
+        ))}
     </>
   );
 };

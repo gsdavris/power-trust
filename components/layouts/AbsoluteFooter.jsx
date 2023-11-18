@@ -9,7 +9,8 @@ const AbsoluteFooter = ({ mode }) => {
               mode === "light" ? "text-gray-600" : "text-gray-300"
             } font-semibold py-1`}
           >
-            Copyright © {new Date().getFullYear()} powered by{" "}
+            Power Trust IKE Αρ. Γ.Ε.ΜΗ.:170623122000 Copyright ©{" "}
+            {new Date().getFullYear()} powered by{" "}
             <a
               href="https://www.motify.gr"
               target="_blank"

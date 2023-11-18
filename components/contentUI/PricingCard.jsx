@@ -12,7 +12,7 @@ const PricingCard = ({ pricingData, mode }) => {
       <div className="p-8 sm:p-10 lg:flex-auto">
         <h3
           className={`text-2xl font-bold tracking-tight ${
-            mode === "light" ? "text-gray-900" : "text-gray-100"
+            mode === "light" ? "text-primary" : "text-gray-100"
           }`}
         >
           {pricingData.title}

@@ -6,7 +6,27 @@ import ContactSection from "../sections/ContactSection";
 import AbsoluteFooter from "./AbsoluteFooter";
 import BackTop from "./BackTop";
 
-const Footer = ({ mode = "light" }) => {
+const Footer = ({ mode = "light", menus, planCategories }) => {
+  const secondaryMenu = menus?.nodes.find((menu) => menu.slug === "secondary");
+  const mainMenu = menus?.nodes.find((menu) => menu.slug === "main");
+
+  const categories = mainMenu?.menuItems.nodes
+    .filter((category) => category.parentId === null)
+    .map((category) => ({
+      ...category,
+      featured: planCategories.nodes.find(
+        (planCategory) => planCategory.name === category.label,
+      )?.categoryDetails.featured,
+      sections: mainMenu.menuItems.nodes
+        .filter((menuItem) => menuItem.parentId === category.id)
+        .map((section) => ({
+          ...section,
+          items: mainMenu.menuItems.nodes.filter(
+            (menuItem) => menuItem.parentId === section.id,
+          ),
+        })),
+    }));
+
   return (
     <>
       <footer
@@ -22,14 +42,20 @@ const Footer = ({ mode = "light" }) => {
                   mode === "light" ? "text-black" : "text-gray-100"
                 }`}
               >
-                Let's keep in touch!
+                Επίσημος Συνεργάτης
               </h4>
+              <img
+                className="h-12 w-auto mx-auto lg:ml-0"
+                src="https://api.motify.gr/power-trust/wp-content/uploads/sites/2/2023/11/elpedison_logo.png"
+                alt="Elpedison logo"
+              />
               <h5
                 className={`text-lg mt-0 mb-2  ${
                   mode === "light" ? "text-gray-600" : "text-gray-300"
                 }`}
               >
-                Find us on any of these platforms, we respond 1-2 business days.
+                Kορυφαία εταιρεία ενέργειας, τόσο στην παραγωγή και προμήθεια
+                ηλεκτρικού ρεύματος, όσο και στην προμήθεια φυσικού αερίου
               </h5>
               <div className="mt-6 lg:mb-0 mb-6">
                 <SocialMenu
@@ -47,39 +73,32 @@ const Footer = ({ mode = "light" }) => {
             <div className="w-full lg:w-8/12 px-4">
               <div className="flex flex-wrap items-top mb-6">
                 <div className="w-full md:w-4/12 px-4 ml-auto">
-                  <FooterMenu
-                    mode={mode}
-                    title="Usefull links"
-                    navigation={[
-                      { label: "About Us", location: "" },
-                      { label: "Blog", location: "" },
-                      { label: "Github", location: "" },
-                      { label: "Free Products", location: "" },
-                    ]}
-                  />
+                  {categories && categories[0] && (
+                    <FooterMenu
+                      mode={mode}
+                      title={categories[0].label}
+                      navigation={categories[0].sections}
+                    />
+                  )}
+                </div>
+                <div className="w-full md:w-4/12 px-4 ml-auto">
+                  {categories && categories[1] && (
+                    <FooterMenu
+                      mode={mode}
+                      title={categories[1].label}
+                      navigation={categories[1].sections}
+                    />
+                  )}
                 </div>
                 <div className="w-full md:w-4/12 px-4 ml-auto">
                   <FooterMenu
                     mode={mode}
-                    title="Usefull links"
-                    navigation={[
-                      { label: "About Us", location: "" },
-                      { label: "Blog", location: "" },
-                      { label: "Github", location: "" },
-                      { label: "Free Products", location: "" },
-                    ]}
+                    title="Σελίδες"
+                    navigation={secondaryMenu?.menuItems?.nodes}
                   />
-                </div>
-                <div className="w-full md:w-4/12 px-4 ml-auto">
-                  <FooterMenu
-                    mode={mode}
-                    title="Other Resources"
-                    navigation={[
-                      { label: "Terms & Conditions", location: "" },
-                      { label: "Privacy Policy", location: "" },
-                    ]}
-                  />
-                  <ContactButton />
+                  <div className="py-4">
+                    <ContactButton />
+                  </div>
                 </div>
               </div>
             </div>

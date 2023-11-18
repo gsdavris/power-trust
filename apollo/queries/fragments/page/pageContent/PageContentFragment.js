@@ -1,4 +1,5 @@
 import CardsFragment from "./CardsFragment";
+import ContentFragment from "./ContentFragment";
 import HalfSliderFragment from "./HalfSliderFragment";
 import HeroBannerFragment from "./HeroBannerFragment";
 import HeroSliderFragment from "./HeroSliderFragment";
@@ -20,6 +21,7 @@ const PageContentFragment = `
     ${HalfSliderFragment}
     ${Images2WTextFragment}
     ${SliderListFragment}
+    ${ContentFragment}
 }
 `;
 

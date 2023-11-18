@@ -8,21 +8,47 @@ import SocialMenu from "../menus/SocialMenu";
 
 const features = [
   {
-    name: "Push to deploy.",
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+    name: "Τηλέφωνικη Επικοινωνία.",
+    description: (
+      <dd className="inline">
+        Συμπληρώστε τα στοιχεία σας στη φόρμα επικοινωνίας και ζητήστε
+        τηλεφωνική επικοινωνία, ένας εκπρόσωπός μας θα σας καλέσει σύντομα. Ή
+        καλέστε μας στο{" "}
+        <a className="font-semibold text-primary" href="tel:+302221604748">
+          2221 604 748
+        </a>
+        .
+      </dd>
+    ),
     icon: HiOutlinePhone,
   },
   {
-    name: "SSL certificates.",
-    description:
-      "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.",
+    name: "Ηλεκτρονικό Ταχυδρομείο.",
+    description: (
+      <dd className="inline">
+        Στείλτε μας email στην διεύθυνσή μας{" "}
+        <a
+          className="font-semibold text-primary"
+          href="mailto:info@powertrust.gr"
+        >
+          info@powertrust.gr
+        </a>{" "}
+        και θα σας απαντήσουμε το συντομότερο.
+      </dd>
+    ),
     icon: HiOutlineEnvelope,
   },
   {
-    name: "Database backups.",
-    description:
-      "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
+    name: "Κεντρικά Γραφεία.",
+    description: (
+      <dd className="inline">
+        Αποστολή αλληλογραφίας στην διεύθυνσή μας{" "}
+        <span className="font-semibold text-primary">
+          Δοξακη Μ. & Αγιας Κυριακής 17, Χαλκίδα
+        </span>
+        .
+      </dd>
+    ),
     icon: HiOutlineMapPin,
   },
 ];
@@ -32,11 +58,11 @@ export default function ContactSection() {
     <section className="overflow-hidden bg-white py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="pb-16 flex flex-col text-center">
-          <h2 className="text-base font-semibold leading-7 text-indigo-600">
-            Deploy faster
+          <h2 className="text-base font-semibold leading-7 text-secondary">
+            Προσωποποιημένη Εξυπηρέτηση
           </h2>
-          <p className="mt-2 font-bold text-3xl text-gray-900 tracking-tight sm:text-5xl">
-            A better workflow
+          <p className="mt-2 font-bold text-3xl text-primary tracking-tight sm:text-5xl">
+            Φόρμα Επικοινωνίας
           </p>
         </div>
 
@@ -44,11 +70,10 @@ export default function ContactSection() {
           <Contact />
           <div className="lg:max-w-lg">
             <p className="text-lg leading-8 text-gray-600">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores
-              impedit perferendis suscipit eaque, iste dolor cupiditate
-              blanditiis ratione.
+              Συμπληρώστε τα στοιχεία σας στη φόρμα επικοινωνίας και ένας
+              σύμβουλος ενέργειας σύντομα θα επικοινωνήσει μαζί σας.
             </p>
-            <dl className="mt-20 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
+            <dl className="mt-20 max-w-xl space-y-8 text-base mx-auto leading-7 text-gray-600 lg:max-w-none">
               {features.map((feature) => (
                 <div key={feature.name} className="relative pl-9">
                   <dt className="inline font-semibold text-gray-900">
@@ -58,7 +83,7 @@ export default function ContactSection() {
                     />
                     {feature.name}
                   </dt>{" "}
-                  <dd className="inline">{feature.description}</dd>
+                  {feature.description}
                 </div>
               ))}
             </dl>

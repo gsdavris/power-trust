@@ -6,7 +6,7 @@ const HeroBannerSection = ({ data }) => {
     <section>
       <Banner
         imageUrl={data?.image?.sourceUrl}
-        minHeight="min-h-screen"
+        minHeight={data?.minHeight || "min-h-screen"}
         alt={data?.image?.altText}
         overlayOpacity={data?.opacity}
       >

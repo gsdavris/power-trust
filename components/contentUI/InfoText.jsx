@@ -13,7 +13,7 @@ const InfoText = ({
   cta3 = { label3: "", path3: "" },
 }) => {
   return (
-    <div className="mx-auto max-w-2xl py-16 px-4">
+    <div data-aos="zoom-in-right" className="mx-auto max-w-2xl py-16 px-4">
       <div
         className={`mb-8 justify-center flex text-${
           textAlign === "left"
@@ -46,7 +46,7 @@ const InfoText = ({
       <div className={`text-${textAlign}`}>
         <h1
           className={`text-4xl font-bold ${
-            mode === "light" ? "text-gray-900" : "text-gray-100"
+            mode === "light" ? "text-primary" : "text-gray-100"
           } tracking-tight sm:text-6xl`}
         >
           {title}
