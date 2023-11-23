@@ -3,7 +3,7 @@ import Slider from "../sliders/Slider";
 
 export default function PricingSection({ data }) {
   return (
-    <section className="bg-white py-24 sm:py-32">
+    <section className="bg-white py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl sm:text-center">
           <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
@@ -17,14 +17,13 @@ export default function PricingSection({ data }) {
       <Slider
         className={
           (data?.mode === "light" ? "white" : "bg-gray-800") +
-          " mx-auto max-w-7xl px-6 lg:px-8"
+          " mx-auto mt-16 sm:mt-20 max-w-7xl px-6 lg:px-8"
         }
         slidesPerView="1"
         spaceBetween="10"
-        free-mode={true}
+        pagination={{ type: "progressbar" }}
         centered-slides={true}
         navigation={{ enabled: false }}
-        effect="slide"
         grabCursor={true}
         loop={false}
         speed={500}
@@ -40,14 +39,9 @@ export default function PricingSection({ data }) {
           },
         }}
         injectStyles={[
-          `
-            ::slotted(swiper-slide) {
-              margin-left: 2px;
-              padding-bottom: 20px;
-            }
-            :host {
-                --swiper-theme-color: white;
-            }`,
+          `:host .swiper-pagination-progressbar-fill {
+              background-color: #8BC751;
+          }`,
         ]}
       >
         {data?.plans.map((plan) => (

@@ -12,7 +12,7 @@ const features = [
     description: (
       <dd className="inline">
         Συμπληρώστε τα στοιχεία σας στη φόρμα επικοινωνίας και ζητήστε
-        τηλεφωνική επικοινωνία, ένας εκπρόσωπός μας θα σας καλέσει σύντομα. Ή
+        τηλεφωνική επικοινωνία, ένας εκπρόσωπός μας θα σας καλέσει δωρεάν. Ή
         καλέστε μας στο{" "}
         <a
           className="font-semibold text-primary hover:text-secondary"
@@ -47,7 +47,7 @@ const features = [
       <dd className="inline">
         Αποστολή αλληλογραφίας στην διεύθυνσή μας{" "}
         <span className="font-semibold text-primary">
-          Δοξακη Μ. & Αγιας Κυριακής 17, Χαλκίδα
+          Δοξακη Μ. & Αγιας Κυριακής 17, Χαλκίδα ΤΚ:34100
         </span>
         .
       </dd>

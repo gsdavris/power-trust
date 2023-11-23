@@ -5,9 +5,9 @@ import ContactButton from "./ContactButton";
 const PricingCard = ({ pricingData, mode }) => {
   return (
     <div
-      className={`mx-auto mt-16 max-w-sm rounded-3xl ring-1 ring-gray-200 ${
+      className={`mx-1 mt-8 mb-2 rounded-3xl ring-1 ring-gray-200 ${
         mode === "light" ? "bg-gray-50" : "bg-gray-900"
-      } sm:mt-20 lg:mx-0 lg:flex lg:max-w-7xl`}
+      } lg:flex lg:max-w-7xl`}
     >
       <div className="p-8 sm:p-10 lg:flex-auto">
         <h3

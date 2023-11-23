@@ -7,7 +7,6 @@ const HeroSliderSection = ({ data }) => {
     <Slider
       className="bg-white"
       slidesPerView={1}
-      // spaceBetween={20}
       centered-slides="true"
       navigation={{ enabled: false }}
       pagination={{ type: "bullets", dynamicBullets: true, clickable: true }}

@@ -2,7 +2,6 @@ import Image from "next/image";
 import Pattern from "../svgs/Pattern";
 
 export default function ContentSection({ data }) {
-  console.log(data);
   return (
     <div className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
       <Pattern />
