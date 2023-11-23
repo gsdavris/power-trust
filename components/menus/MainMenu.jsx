@@ -47,8 +47,8 @@ const MainMenu = ({ mode, menus, planCategories }) => {
                         open
                           ? "border-secondary text-secondary"
                           : mode === "dark"
-                          ? "border-transparent text-gray-100 hover:text-indigo-200"
-                          : "border-transparent text-gray-700 hover:text-indigo-700 hover:bg-gray-50",
+                            ? "border-transparent text-gray-100 hover:text-indigo-200"
+                            : "border-transparent text-gray-700 hover:text-indigo-700 hover:bg-gray-50",
                         "relative z-10 -mb-px flex items-center border-b-2 text-sm px-3 py-2 leading-6 font-semibold transition-colors duration-200 ease-out",
                       )}
                     >
@@ -80,8 +80,8 @@ const MainMenu = ({ mode, menus, planCategories }) => {
                                   >
                                     <div className="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
                                       <img
-                                        src={item.featuredImage.node.sourceUrl}
-                                        alt={item.featuredImage.node.altText}
+                                        src={item.featuredImage?.node.sourceUrl}
+                                        alt={item.featuredImage?.node.altText}
                                         className="h-full object-cover object-center"
                                       />
                                     </div>

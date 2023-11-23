@@ -10,7 +10,6 @@ const Banner = ({ imageUrl, alt, overlayOpacity, minHeight, children }) => {
         <Image
           src={imageUrl}
           fill
-          sizes="(min-width: 808px) 50vw, 33vw, 100vw"
           style={{ objectFit: "cover", objectPosition: "center" }}
           alt={alt}
         />

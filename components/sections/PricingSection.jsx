@@ -19,7 +19,7 @@ export default function PricingSection({ data }) {
           (data?.mode === "light" ? "white" : "bg-gray-800") +
           " mx-auto max-w-7xl px-6 lg:px-8"
         }
-        slidesPerView="auto"
+        slidesPerView="1"
         spaceBetween="10"
         free-mode={true}
         centered-slides={true}
@@ -42,7 +42,6 @@ export default function PricingSection({ data }) {
         injectStyles={[
           `
             ::slotted(swiper-slide) {
-              width: auto;
               margin-left: 2px;
               padding-bottom: 20px;
             }
@@ -52,7 +51,7 @@ export default function PricingSection({ data }) {
         ]}
       >
         {data?.plans.map((plan) => (
-          <PricingCard key={plan.id} pricingData={plan} mode={data.mode} />
+          <PricingCard key={plan?.id} pricingData={plan} mode={data.mode} />
         ))}
       </Slider>
     </section>
