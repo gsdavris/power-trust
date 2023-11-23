@@ -10,6 +10,8 @@ heroBanner {
       altText
       sourceUrl
     }
+    contactButton
+    contactLabel
     ctas
     cta {
       fieldGroupName

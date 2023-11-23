@@ -49,7 +49,8 @@ const HeroSliderSection = ({ data }) => {
         >
           <InfoText
             mode="dark"
-            contactModalButton="true"
+            contactModalButton={data.slide1.contactButton}
+            contactModalButtonLabel={data.slide1.contactLabel}
             title={data.slide1.title}
             subtitle={data.slide1.subtitle}
             description={data.slide1.description}
@@ -86,7 +87,8 @@ const HeroSliderSection = ({ data }) => {
         >
           <InfoText
             mode="dark"
-            contactModalButton="true"
+            contactModalButton={data.slide2.contactButton}
+            contactModalButtonLabel={data.slide2.contactLabel}
             title={data.slide2.title}
             subtitle={data.slide2.subtitle}
             description={data.slide2.description}
@@ -123,7 +125,8 @@ const HeroSliderSection = ({ data }) => {
         >
           <InfoText
             mode="dark"
-            contactModalButton="true"
+            contactModalButton={data.slide3.contactButton}
+            contactModalButtonLabel={data.slide3.contactLabel}
             title={data.slide3.title}
             subtitle={data.slide3.subtitle}
             description={data.slide3.description}
@@ -160,7 +163,8 @@ const HeroSliderSection = ({ data }) => {
         >
           <InfoText
             mode="dark"
-            contactModalButton="true"
+            contactModalButton={data.slide4.contactButton}
+            contactModalButtonLabel={data.slide4.contactLabel}
             title={data.slide4.title}
             subtitle={data.slide4.subtitle}
             description={data.slide4.description}

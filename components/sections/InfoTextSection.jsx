@@ -5,7 +5,8 @@ const InfoTextSection = ({ data }) => {
     <section>
       <InfoText
         mode={data.mode}
-        contactModalButton={false}
+        contactModalButton={data.contactButton}
+        contactModalButtonLabel={data.contactLabel}
         title={data.title}
         subtitle={data.subtitle}
         description={data.description}

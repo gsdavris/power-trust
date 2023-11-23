@@ -4,6 +4,8 @@ import Banner from "../contentUI/Banner";
 const HalfSliderSection = ({ data }) => {
   return (
     <HalfSlider
+      contactModalButton={data.contactButton}
+      contactModalButtonLabel={data.contactLabel}
       title={data.title}
       subtitle={data.subtitle}
       description={data.description}

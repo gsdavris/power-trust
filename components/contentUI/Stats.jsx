@@ -1,32 +1,31 @@
-const Stats = ({ mode = "dark", textAlign = "left", statsData }) => {
+const Stats = ({ mode = "dark", textAlign = "left", data }) => {
+  const { stats } = data;
   return (
     <div className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div
           className={`${
             textAlign === "center" ? "mx-auto text-center" : "text-left"
-          } max-w-2xl mb-16`}
+          } max-w-5xl mb-16`}
         >
           <h1
             className={`text-4xl font-bold ${
               mode === "light" ? "text-gray-900" : "text-gray-100"
             } tracking-tight sm:text-6xl`}
           >
-            Trusted by thousands of creators worldwide
+            {data?.title}
           </h1>
           <p
             className={`mt-6 text-lg leading-8 ${
               mode === "light" ? "text-gray-600" : "text-gray-300"
             }`}
           >
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores
-            impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis
-            ratione.
+            {data?.description}
           </p>
         </div>
         <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-left border-l lg:border-none lg:grid-cols-3">
-          {statsData &&
-            JSON.parse(statsData)?.map((stat) => (
+          {stats &&
+            JSON.parse(stats)?.map((stat) => (
               <div
                 key={stat.id}
                 className="flex lg:mx-auto max-w-xs flex-col gap-y-4 lg:border-l pl-8"

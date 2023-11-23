@@ -13,7 +13,8 @@ const HeroBannerSection = ({ data }) => {
         <InfoText
           textAlign="center"
           mode="dark"
-          contactModalButton="true"
+          contactModalButton={data.contactButton}
+          contactModalButtonLabel={data.contactLabel}
           title={data.title}
           subtitle={data.subtitle}
           description={data.description}

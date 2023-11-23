@@ -2,6 +2,7 @@ import ContactButton from "./ContactButton";
 
 const InfoText = ({
   contactModalButton = false,
+  contactModalButtonLabel,
   mode = "light",
   textAlign = "center",
   title = "",
@@ -19,8 +20,8 @@ const InfoText = ({
           textAlign === "left"
             ? "start"
             : textAlign === "right"
-            ? "end"
-            : textAlign
+              ? "end"
+              : textAlign
         }`}
       >
         {subtitle && (
@@ -73,11 +74,13 @@ const InfoText = ({
             textAlign === "left"
               ? "start"
               : textAlign === "right"
-              ? "end"
-              : textAlign
+                ? "end"
+                : textAlign
           } gap-x-6`}
         >
-          {contactModalButton && <ContactButton />}
+          {contactModalButton && (
+            <ContactButton label={contactModalButtonLabel} />
+          )}
           {cta2.label2 && (
             <a
               href={cta2.path2}

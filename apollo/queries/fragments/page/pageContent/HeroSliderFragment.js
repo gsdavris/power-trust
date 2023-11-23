@@ -2,6 +2,8 @@ const HeroSliderFragment = `
     heroSlider {
       sliders
       slide1 {
+        contactButton
+        contactLabel
         cta {
           label
           type
@@ -82,6 +84,8 @@ const HeroSliderFragment = `
         title
       }
       slide2 {
+        contactButton
+        contactLabel
         cta {
           label
           type
@@ -162,6 +166,8 @@ const HeroSliderFragment = `
         title
       }
       slide3 {
+        contactButton
+        contactLabel
         cta {
           label
           type
@@ -242,6 +248,8 @@ const HeroSliderFragment = `
         title
       }
       slide4 {
+        contactButton
+        contactLabel
         cta {
           label
           type

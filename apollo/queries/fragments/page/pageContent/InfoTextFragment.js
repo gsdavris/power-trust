@@ -4,6 +4,8 @@ const InfoTextFragment = `
         title
         subtitle
         mode
+        contactButton
+        contactLabel
         ctas
         cta {
           label

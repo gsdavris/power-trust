@@ -11,6 +11,7 @@ const SocialMenu = ({ social }) => {
           href={item.location}
           target="_blank"
         >
+          <span className="sr-only">View our {item?.name} profile</span>
           {getIconByName(item.name, "", "h-6 w-6")}
         </Link>
       ))}

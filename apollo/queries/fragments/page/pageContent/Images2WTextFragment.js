@@ -4,6 +4,8 @@ imagesWText {
     subtitle
     description
     mode
+    contactButton
+    contactLabel
     ctas
     image {
       altText

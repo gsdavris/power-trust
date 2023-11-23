@@ -5,6 +5,8 @@ halfSlider {
         subtitle
         mode
         ctas
+        contactButton
+        contactLabel
         minheight
         image {
           altText

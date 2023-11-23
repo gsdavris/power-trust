@@ -2,6 +2,7 @@ import Banner from "../contentUI/Banner";
 import Stats from "../contentUI/Stats";
 
 const StatSection = ({ data }) => {
+  
   return (
     <section>
       <Banner
@@ -10,11 +11,7 @@ const StatSection = ({ data }) => {
         alt={data.image?.altText}
         overlayOpacity={data.opacity}
       >
-        <Stats
-          mode={data.mode}
-          statsData={data.stats}
-          textAlign={data.textAlign}
-        />
+        <Stats mode={data.mode} data={data} textAlign={data.textAlign} />
       </Banner>
     </section>
   );

@@ -39,6 +39,7 @@ const BackTop = () => {
         onClick={handleClick}
         className="bg-gray-500 hover:bg-gray-700 shadow hover:shadow-lg rounded-full h-14 w-14 flex items-center justify-center focus:outline-none"
       >
+        <span className="sr-only">Back to top</span>
         <FaChevronUp className="text-white h-6 w-6" />
       </button>
     </div>

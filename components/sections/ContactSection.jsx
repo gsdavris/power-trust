@@ -14,7 +14,10 @@ const features = [
         Συμπληρώστε τα στοιχεία σας στη φόρμα επικοινωνίας και ζητήστε
         τηλεφωνική επικοινωνία, ένας εκπρόσωπός μας θα σας καλέσει σύντομα. Ή
         καλέστε μας στο{" "}
-        <a className="font-semibold text-primary" href="tel:+302221604748">
+        <a
+          className="font-semibold text-primary hover:text-secondary"
+          href="tel:+302221604748"
+        >
           2221 604 748
         </a>
         .
@@ -28,7 +31,7 @@ const features = [
       <dd className="inline">
         Στείλτε μας email στην διεύθυνσή μας{" "}
         <a
-          className="font-semibold text-primary"
+          className="font-semibold text-primary hover:text-secondary"
           href="mailto:info@powertrust.gr"
         >
           info@powertrust.gr
@@ -78,7 +81,7 @@ export default function ContactSection() {
                 <div key={feature.name} className="relative pl-9">
                   <dt className="inline font-semibold text-gray-900">
                     <feature.icon
-                      className="absolute left-1 top-1 h-6 w-6 text-indigo-600"
+                      className="absolute left-1 top-1 h-6 w-6 text-primary hover:text-secondary"
                       aria-hidden="true"
                     />
                     {feature.name}

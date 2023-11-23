@@ -8,6 +8,8 @@ const HalfSlider = ({
   title,
   subtitle,
   description,
+  contactModalButton,
+  contactModalButtonLabel,
   cta,
   cta1,
   cta2,
@@ -66,7 +68,8 @@ const HalfSlider = ({
           </div>
           <div className="w-full md:w-4/12 mx-auto">
             <InfoText
-              contactModalButton
+              contactModalButton={contactModalButton}
+              contactModalButtonLabel={contactModalButtonLabel}
               mode={mode}
               textAlign="left"
               title={title}

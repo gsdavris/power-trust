@@ -193,7 +193,7 @@ export default function Contact() {
         </div>
         <div className="sm:col-span-2">
           <label
-            htmlFor="phone-number"
+            htmlFor="phoneNumber"
             className="block text-sm font-semibold leading-6 text-gray-900"
           >
             Αριθμός τηλεφώνου*
@@ -250,7 +250,10 @@ export default function Contact() {
           </div>
           <Switch.Label className="text-sm leading-6 text-gray-600">
             Συμφωνώ με την{" "}
-            <a href="#" className="font-semibold text-indigo-600">
+            <a
+              href="/politiki-aporritou"
+              className="font-semibold text-primary hover:text-secondary"
+            >
               Πολιτική&nbsp;Απορρήτου
             </a>
             .

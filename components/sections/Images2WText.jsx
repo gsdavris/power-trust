@@ -38,7 +38,8 @@ const Images2WText = ({ data }) => {
           <div className="lg:w-6/12">
             <InfoText
               mode={data?.mode}
-              contactModalButton="true"
+              contactModalButton={data.contactButton}
+              contactModalButtonLabel={data.contactLabel}
               title={data.title}
               subtitle={data.subtitle}
               description={data.description}
