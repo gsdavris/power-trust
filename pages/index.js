@@ -20,6 +20,5 @@ export async function getStaticProps() {
       uri: "/",
     },
   });
-
   return { props: { data: data || {} } };
 }

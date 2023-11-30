@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ContactButton from "./ContactButton";
 
 const InfoText = ({
@@ -35,11 +36,11 @@ const InfoText = ({
             }`}
           >
             {subtitle}{" "}
-            {cta1.label1 && (
-              <a href={cta1.path1} className="font-semibold text-indigo-600">
+            {cta2?.label2 && (
+              <Link href={cta2.path2} className="font-semibold text-secondary">
                 <span className="absolute inset-0" aria-hidden="true" />
-                {cta1.label1} <span aria-hidden="true">&rarr;</span>
-              </a>
+                {cta2.label2} <span aria-hidden="true">&rarr;</span>
+              </Link>
             )}
           </div>
         )}
@@ -81,23 +82,23 @@ const InfoText = ({
           {contactModalButton && (
             <ContactButton label={contactModalButtonLabel} />
           )}
-          {cta2.label2 && (
-            <a
-              href={cta2.path2}
-              className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white hover:shadow shadow-md hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          {cta1?.label1 && (
+            <Link
+              href={cta1.path1}
+              className="rounded-md bg-primary px-3.5 py-2.5 text-sm font-semibold text-white hover:shadow shadow-md hover:bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              {cta2.label2}
-            </a>
+              {cta1.label1}
+            </Link>
           )}
-          {cta3.label3 && (
-            <a
+          {cta3?.label3 && (
+            <Link
               href={cta3.path3}
               className={`text-sm font-semibold leading-6 ${
                 mode === "light" ? "text-gray-900" : "text-gray-100"
               }`}
             >
               {cta3.label3} <span aria-hidden="true">→</span>
-            </a>
+            </Link>
           )}
         </div>
       </div>
