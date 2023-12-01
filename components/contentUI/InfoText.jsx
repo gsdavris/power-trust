@@ -17,7 +17,13 @@ const InfoText = ({
   return (
     <div data-aos="zoom-in-right" className="mx-auto max-w-2xl py-16 px-4">
       <div
-        className={`mb-8 justify-center flex text-${
+        className={`mb-8 ${
+          textAlign === "left"
+            ? "justify-start"
+            : textAlign === "right"
+              ? "justify-end"
+              : "justify-center"
+        } flex text-${
           textAlign === "left"
             ? "start"
             : textAlign === "right"
