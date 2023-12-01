@@ -64,7 +64,9 @@ const Card = ({
                 className={`mt-2 mb-4 ${
                   mode === "light" ? "text-gray-600" : "text-gray-300"
                 } text-lg leading-8`}
-                dangerouslySetInnerHTML={{ __html: description }}
+                dangerouslySetInnerHTML={{
+                  __html: description.substring(0, 100) + "...",
+                }}
               />
             </div>
           </Link>

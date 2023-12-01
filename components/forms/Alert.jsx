@@ -24,22 +24,22 @@ const Alert = ({ responseData }) => {
       danger: {
         color: "bg-red-400",
         icon: <HiOutlineExclamationCircle className="h-8 w-8" />,
-        title: "Error",
+        title: "Σφάλμα",
       },
       success: {
         color: "bg-emerald-400",
         icon: <HiOutlineCheckCircle className="h-8 w-8" />,
-        title: "Success",
+        title: "Επιτυχία",
       },
       warning: {
         color: "bg-yellow-400",
         icon: <HiOutlineExclamationTriangle className="h-8 w-8" />,
-        title: "Warning",
+        title: "Προειδοποίηση",
       },
       info: {
         color: "bg-sky-400",
         icon: <HiOutlineInformationCircle className="h-8 w-8" />,
-        title: "info",
+        title: "Πληροφορία",
       },
     };
 
