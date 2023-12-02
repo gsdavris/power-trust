@@ -15,6 +15,21 @@ const Card = ({
   parent,
   mode,
 }) => {
+  const shortenedText = (text, maxLength) => {
+    const words = text.trim().split(" ");
+    if (words.join(" ").length > maxLength) {
+      let truncatedText = "";
+      for (const word of words) {
+        if ((truncatedText + word).length <= maxLength) {
+          truncatedText += word + " ";
+        } else {
+          break;
+        }
+      }
+      return truncatedText;
+    }
+  };
+
   return (
     <div className="w-full text-center">
       <div
@@ -65,7 +80,9 @@ const Card = ({
                   mode === "light" ? "text-gray-600" : "text-gray-300"
                 } text-lg leading-8`}
                 dangerouslySetInnerHTML={{
-                  __html: description.substring(0, 100) + "...",
+                  __html:
+                    shortenedText(description, 90) +
+                    "<span class='text-secondary hover:text-secondary/70 text-sm'>...περισσότερα</span>",
                 }}
               />
             </div>
