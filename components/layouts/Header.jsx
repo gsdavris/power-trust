@@ -37,7 +37,6 @@ const Header = ({ menus, categories, defaultSeo }) => {
         categories={categories}
         defaultSeo={defaultSeo}
       />
-      {/* <NavbarMobile open={open} setOpen={setOpen} /> */}
       <SlideOver
         open={open}
         setOpen={setOpen}

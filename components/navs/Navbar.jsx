@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { HiOutlineBars3 } from "react-icons/hi2";
 import MainMenu from "../menus/MainMenu";
 import ContactButton from "../contentUI/ContactButton";
@@ -24,8 +25,10 @@ export default function Navbar({
       <div className="flex lg:flex-1">
         <Link href="/" className="-my-6 p-1">
           <span className="sr-only">{defaultSeo?.schema.companyName}</span>
-          <img
+          <Image
             className="h-12 w-auto"
+            width="213"
+            height="48"
             src={defaultSeo?.schema.companyLogo.sourceUrl}
             alt={defaultSeo?.schema.companyLogo.altText}
           />

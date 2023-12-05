@@ -1,9 +1,9 @@
 import { Fragment } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Dialog, Transition } from "@headlessui/react";
 import { HiOutlineXMark } from "react-icons/hi2";
 import MobileMenu from "../menus/MobileMenu";
-import ProfileDropdownMobile from "../dropdowns/ProfileDropdownMobile";
 import ContactButton from "../contentUI/ContactButton";
 import SocialMenu from "../menus/SocialMenu";
 
@@ -43,8 +43,10 @@ const SlideOver = ({ open, setOpen, menus, categories, defaultSeo }) => {
                           <span className="sr-only">
                             {defaultSeo?.schema.companyName}
                           </span>
-                          <img
+                          <Image
                             className="h-12 w-auto"
+                            width="213"
+                            height="48"
                             src={defaultSeo?.schema.companyLogo.sourceUrl}
                             alt={defaultSeo?.schema.companyLogo.altText}
                           />
