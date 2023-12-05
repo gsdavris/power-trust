@@ -45,7 +45,7 @@ const Footer = ({ mode = "light", menus, planCategories }) => {
                 Επίσημος Συνεργάτης
               </h4>
               <img
-                className="h-12 w-auto mx-auto lg:ml-0"
+                className="h-12 w-auto mx-auto my-2 lg:ml-0"
                 src="https://api.motify.gr/power-trust/wp-content/uploads/sites/2/2023/11/elpedison_logo.png"
                 alt="Elpedison logo"
               />
