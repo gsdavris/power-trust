@@ -87,7 +87,8 @@ const SlideOver = ({ open, setOpen, menus, categories, defaultSeo }) => {
                                 },
                                 {
                                   name: "instagram",
-                                  location: "https://www.instagram.com",
+                                  location:
+                                    "https://www.instagram.com/powertrust_2023",
                                 },
                               ]}
                             />

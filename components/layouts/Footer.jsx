@@ -64,7 +64,7 @@ const Footer = ({ mode = "light", menus, planCategories }) => {
                     { name: "facebook", location: "https://www.facebook.com" },
                     {
                       name: "instagram",
-                      location: "https://www.instagram.com",
+                      location: "https://www.instagram.com/powertrust_2023",
                     },
                   ]}
                 />

@@ -103,7 +103,7 @@ export default function ContactSection() {
                   },
                   {
                     name: "instagram",
-                    location: "https://www.instagram.com",
+                    location: "https://www.instagram.com/powertrust_2023",
                   },
                 ]}
               />
