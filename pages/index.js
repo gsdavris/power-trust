@@ -17,7 +17,7 @@ export async function getStaticProps() {
   const { data, errors } = await client.query({
     query: GET_PAGE,
     variables: {
-      uri: "/",
+      id: "/",
     },
   });
   return {

@@ -1,7 +1,7 @@
 import client from "../apollo/client";
 import PageContent from "../components/contentUI/PageContent";
 import Layout from "../components/layouts/Layout";
-import { GET_DYNAMIC_PAGE } from "../apollo/queries/pages/get-dynamic-page";
+import { GET_PAGE } from "../apollo/queries/pages/get-page";
 import { GET_PAGES_SLUG } from "../apollo/queries/pages/get-pages";
 
 export default function DynamicPage({ data }) {
@@ -16,7 +16,7 @@ export default function DynamicPage({ data }) {
 
 export async function getStaticProps({ params }) {
   const { data, errors } = await client.query({
-    query: GET_DYNAMIC_PAGE,
+    query: GET_PAGE,
     variables: {
       id: params?.slug,
     },

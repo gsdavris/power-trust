@@ -1,8 +1,14 @@
 const CategoriesFragment = `
-categories {
+categories(first: 100) {
     nodes {
           id
           name
+          slug
+          posts {
+            nodes {
+              id
+            }
+          }
           categoryDetails {
             featured {
               ... on Plan {

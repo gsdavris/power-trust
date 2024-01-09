@@ -65,6 +65,9 @@ export async function getStaticPaths() {
       category.slug &&
         category?.children?.nodes.length === 0 &&
         category.slug !== "ataxinomita" &&
+        category.slug !== "revma" &&
+        category.slug !== "aerio" &&
+        category.slug !== "ta-panta-gia-tin-energeia" &&
         pathsData.push({
           params: {
             parentSlug: category?.parent?.node?.slug,

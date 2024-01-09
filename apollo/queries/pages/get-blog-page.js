@@ -4,9 +4,13 @@ import PageContentFragment from "../fragments/page/pageContent/PageContentFragme
 import CategoriesFragment from "../fragments/plans/CategoriesFragment";
 import DefaultSeoFragment from "../fragments/seo/DefaultSeoFragment";
 import PageSeoFragment from "../fragments/seo/PageSeoFragment";
+import PostFragment from "../fragments/posts/PostFragment";
 
-export const GET_DYNAMIC_PAGE = gql`
-  query GET_DYNAMIC_PAGE($id: ID!) {
+export const GET_BLOG_PAGE = gql`
+  query GET_BLOG_PAGE(
+    $id: ID!, 
+    $first: Int
+    ) {
       page(id: $id, idType: URI) {
       ${PageSeoFragment}
       ${PageContentFragment}
@@ -14,5 +18,16 @@ export const GET_DYNAMIC_PAGE = gql`
     ${DefaultSeoFragment}
     ${MenuFragment}   
     ${CategoriesFragment}
+    posts: posts(first: $first) {
+      nodes {
+        ${PostFragment}
+      }
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+        startCursor
+        endCursor
+      }
+    }
   }
 `;
