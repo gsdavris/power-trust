@@ -13,9 +13,4 @@ module.exports = {
       },
     ],
   },
-  experimental: {
-    outputFileTracingIncludes: {
-      "/blog": ["./blog/index.js"],
-    },
-  },
 };
