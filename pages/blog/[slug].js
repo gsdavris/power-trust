@@ -52,7 +52,7 @@ export async function getStaticPaths() {
   });
 
   return {
-    paths: data.posts.nodes.map((post) => `/posts/${post.slug}`) || [],
+    paths: data.posts.nodes.map((post) => `/blog/${post.slug}`) || [],
     fallback: false,
   };
 }
