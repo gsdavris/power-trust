@@ -36,11 +36,17 @@ export async function getStaticPaths() {
     query: GET_PAGES_SLUG,
   });
 
+  // console.log(
+  //   data?.pages?.nodes
+  //     .map((page) => `/${page.slug}`)
+  //     .filter((i) => i !== "/news" && i !== "/"),
+  // );
+
   return {
     paths:
       data?.pages?.nodes
         .map((page) => `/${page.slug}`)
-        .filter((i) => i !== "/news" || i !== "/") || [],
+        .filter((i) => i !== "/news" && i !== "/") || [],
     fallback: false,
   };
 }
