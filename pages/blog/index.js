@@ -8,8 +8,8 @@ import PageContent from "../../components/contentUI/PageContent";
 import Loading from "../../components/contentUI/Loading";
 import Alert from "../../components/forms/Alert";
 
-import client from "../apollo/client";
-import { GET_BLOG_PAGE } from "../apollo/queries/pages/get-blog-page";
+import client from "../../apollo/client";
+import { GET_BLOG_PAGE } from "../../apollo/queries/pages/get-blog-page";
 
 export default function BlogPage({ data }) {
   const { page, posts, categories } = data;
