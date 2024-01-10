@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi2";
-import BlogLayout from "../../components/layouts/BlogLayout";
-import PostCard from "../../components/contentUI/PostCard";
-import Layout from "../../components/layouts/Layout";
-import PageContent from "../../components/contentUI/PageContent";
-import Loading from "../../components/contentUI/Loading";
-import Alert from "../../components/forms/Alert";
+import BlogLayout from "../components/layouts/BlogLayout";
+import PostCard from "../components/contentUI/PostCard";
+import Layout from "../components/layouts/Layout";
+import PageContent from "../components/contentUI/PageContent";
+import Loading from "../components/contentUI/Loading";
+import Alert from "../components/forms/Alert";
 
-import client from "../../apollo/client";
-import { GET_BLOG_PAGE } from "../../apollo/queries/pages/get-blog-page";
+import client from "../apollo/client";
+import { GET_BLOG_PAGE } from "../apollo/queries/pages/get-blog-page";
 
 export default function BlogPage({ data }) {
   const { page, posts, categories } = data;
