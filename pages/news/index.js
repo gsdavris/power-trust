@@ -250,7 +250,7 @@ export async function getStaticProps() {
   const { data, errors } = await client.query({
     query: GET_BLOG_PAGE,
     variables: {
-      id: "/blog",
+      id: "/news",
       first: 9,
     },
   });

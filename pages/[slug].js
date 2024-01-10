@@ -40,7 +40,7 @@ export async function getStaticPaths() {
     paths:
       data?.pages?.nodes
         .map((page) => `/${page.slug}`)
-        .filter((i) => i !== "/blog" || i !== "/") || [],
+        .filter((i) => i !== "/news" || i !== "/") || [],
     fallback: false,
   };
 }
