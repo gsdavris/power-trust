@@ -5,7 +5,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  safelist: ["h-64", "min-h-[600px]", "opacity-50", "min-h-screen"],
+  safelist: ["h-64", "min-h-[600px]", "opacity-50", "min-h-screen", "bg-[#009047]", "bg-[#ffdd00]"],
   theme: {
     extend: {
       colors: {
