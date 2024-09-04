@@ -18,6 +18,20 @@ export default function SinglePricingSection({ plan, mode = "dark" }) {
             >
               {plan?.title}
             </h3>
+
+            <div className="mt-6 justify-start flex text-start">
+            {plan?.planTypes?.nodes[0] && (
+              <div
+                className={`relative rounded-full px-3 bg-[${plan?.planTypes?.nodes[0]?.planTypeDetails.planTypeColor}] py-1 text-sm leading-6 text-primary ring-1 ${ 
+                  mode === "light"
+                    ? "ring-gray-900/10 hover:ring-gray-900/20"
+                    : "ring-gray-100/10 hover:ring-gray-100/20"
+                }`}
+              >
+                {plan?.planTypes?.nodes[0]?.name}            
+              </div>
+            )}
+      </div>
             <div
               className={`mt-6 text-base leading-7 ${
                 mode === "light" ? "text-gray-600" : "text-gray-300"

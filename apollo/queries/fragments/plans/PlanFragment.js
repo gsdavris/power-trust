@@ -31,6 +31,14 @@ const PlanFragment = `
         charges
         relatedLinks
     }
+    planTypes {
+        nodes {
+          planTypeDetails {
+            planTypeColor
+          }
+          name
+        }
+    }
     title
 `;
 
