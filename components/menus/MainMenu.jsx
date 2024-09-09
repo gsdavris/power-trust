@@ -117,7 +117,7 @@ const MainMenu = ({ mode, menus, planCategories }) => {
                                     <ul
                                       role="list"
                                       aria-labelledby={`${section.label}-heading`}
-                                      className="mt-6 space-y-6 sm:mt-4 sm:space-y-4"
+                                      className="mt-6 space-y-6 sm:mt-4 sm:space-y-4 md:max-h-32 overflow-y-auto 2xl:max-h-96"
                                     >
                                       {section.items.map((item) => (
                                         <li key={item.id} className="flex">
