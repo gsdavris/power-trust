@@ -21,7 +21,7 @@ const PlanFragment = `
         sourceUrl
         }
     }
-    features {
+    features(first: 100) {
         nodes {
         id
         name
