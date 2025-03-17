@@ -1,33 +1,26 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+import Script from "next/script";
 import AOS from "aos";
 import "../styles/global.scss";
 import "aos/dist/aos.css";
 import { ModalProvider } from "../context";
 import { ApolloProvider } from "@apollo/client";
 import client from "../apollo/client";
+import * as gtag from "../utils/gtag";
 
-export default function MyApp({ Component, pageProps, router }) {
+export default function MyApp ({ Component, pageProps, router }) {
   const myRouter = useRouter();
 
   useEffect(() => {
     const handleRouteChange = (url) => {
-      // Push to dataLayer
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: "pageview",
-        page: url,
-      });
+      gtag.pageview(url);
     };
-
-    // When the component is mounted, subscribe to router changes
-    router.events.on("routeChangeComplete", handleRouteChange);
-
-    // If the component is unmounted, unsubscribe
+    myRouter.events.on("routeChangeComplete", handleRouteChange);
     return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
+      myRouter.events.off("routeChangeComplete", handleRouteChange);
     };
-  }, [router.events]);
+  }, [myRouter.events]);
 
   useEffect(() => {
     AOS.init({
@@ -37,9 +30,28 @@ export default function MyApp({ Component, pageProps, router }) {
   }, []);
 
   return (
-    <ApolloProvider client={client}>
+    <ApolloProvider client={ client }>
       <ModalProvider>
-        <Component {...pageProps} key={router.asPath} />
+        {/* Google Analytics Script */ }
+        <Script
+          strategy="beforeInteractive"
+          src={ `https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}` }
+        />
+        <Script
+          id="google-analytics"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={ {
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+          } }
+        />
+        <Component { ...pageProps } key={ router.asPath } />
       </ModalProvider>
     </ApolloProvider>
   );
