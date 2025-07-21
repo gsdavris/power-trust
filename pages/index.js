@@ -3,23 +3,24 @@ import client from "../apollo/client";
 import { GET_PAGE } from "../apollo/queries/pages/get-page";
 import PageContent from "../components/contentUI/PageContent";
 
-export default function IndexPage({ data }) {
+export default function IndexPage ({ data }) {
   const { page } = data;
 
   return (
-    <Layout data={data}>
-      <PageContent content={page?.pageContent} />
+    <Layout data={ data }>
+      <PageContent content={ page?.pageContent } />
     </Layout>
   );
 }
 
-export async function getStaticProps() {
+export async function getStaticProps () {
   const { data, errors } = await client.query({
     query: GET_PAGE,
     variables: {
       id: "/",
     },
   });
+
   return {
     props: { data: data || {} },
     // Next.js will attempt to re-generate the page:
